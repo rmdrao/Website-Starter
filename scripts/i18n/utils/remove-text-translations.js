@@ -28,6 +28,8 @@ export async function removeTextTranslations(logging = false) {
             // remove any const <const anything = useTranslations(anything);> and <import { useTranslations } from "@js/translationUtils">;
             content = content.replace(/import\s*{\s*useTranslations\s*}\s*from\s*['"]@\/?js\/translationUtils['"]\s*;?\s*/g, "");
             content = content.replace(/const\s+\w+\s*=\s*useTranslations\s*\(\s*[^)]*\s*\)\s*;?\s*/g, "");
+            // also remove any import { useTranslations } from "@/docs/js/translationUtils";
+            content = content.replace(/import\s*{\s*useTranslations\s*}\s*from\s*['"]@\/docs\/js\/translationUtils['"]\s*;?\s*/g, "");
             // Only write if content changed
             if (content !== originalContent) {
                 await writeFile(filepath, content, "utf-8");

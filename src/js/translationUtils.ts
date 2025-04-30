@@ -1,7 +1,6 @@
 import { getRelativeLocaleUrl } from "astro:i18n";
-import { type CollectionEntry, getCollection } from "astro:content";
+import { getCollection } from "astro:content";
 import type { DataEntryMap } from "astro:content";
-// data
 import {
 	textTranslations,
 	dataTranslations,
@@ -13,7 +12,7 @@ import { locales, defaultLocale } from "@/config/siteSettings.json";
 /**
  * * text translation helper function
  * @param locale: Language to use for translation, one of the locales
- * @returns function you can use to translate strings according to the src/config/translations.json file
+ * @returns function you can use to translate strings according to the src/config/translationData.json.ts file
  *
  * ## Example
  *
@@ -36,7 +35,7 @@ type DataKey<T extends Locale> = keyof (typeof dataTranslations)[T];
  * * data file translation helper function
  * @param data: key in the data file to translate, like "siteData" or "navData"
  * @param locale: Language to use for translation, one of the locales
- * @returns appropriate data file as specified in src/config/i18nData.json.ts
+ * @returns appropriate data file as specified in src/config/translationData.json.ts
  *
  * ## Example
  *
@@ -52,6 +51,59 @@ export function getTranslatedData<T extends Locale, K extends DataKey<T>>(
 	locale: T,
 ): (typeof dataTranslations)[T][K] {
 	return dataTranslations[locale][data] || dataTranslations[defaultLocale as T][data];
+}
+
+/**
+ * * Returns the translated route for a given locale and base route. Drop-in replacement for getRelativeLocaleUrl()
+ * Tries to match the longest prefix first, then shorter, for most specific translation.
+ * Uses the static routeTranslations object (not async).
+ * @param locale - The target locale (e.g., "de")
+ * @param baseRoute - The route in the assumed base locale (default is defaultLocale)
+ * @param options - Optional object: { baseLocale?: string }
+ * @returns The localized route string
+ */
+export function getLocalizedRoute(
+	locale: (typeof locales)[number],
+	baseRoute: string,
+	options?: { baseLocale?: (typeof locales)[number] },
+): string {
+	const assumedBaseLocale = options?.baseLocale ?? defaultLocale;
+	const normalized = baseRoute.replace(/^\/?|\/?$/g, "");
+
+	// Special case: root route
+	if (normalized === "") {
+		return locale === defaultLocale ? "/" : `/${locale}/`;
+	}
+
+	const defaultTranslations = routeTranslations[assumedBaseLocale];
+	const localeTranslations = routeTranslations[locale];
+
+	const segments = normalized.split("/");
+
+	let routePath: string | undefined;
+
+	// Try longest to shortest prefix
+	for (let i = segments.length; i > 0; i--) {
+		const prefix = segments.slice(0, i).join("/");
+		const key = Object.keys(defaultTranslations).find((k) => defaultTranslations[k] === prefix);
+		if (key && localeTranslations[key]) {
+			const translatedPrefix = localeTranslations[key];
+			const rest = segments.slice(i).join("/");
+			routePath = [translatedPrefix, rest].filter(Boolean).join("/");
+			break;
+		}
+	}
+
+	if (!routePath) {
+		routePath = normalized;
+	}
+
+	// Insert locale prefix if not default
+	if (locale !== defaultLocale) {
+		routePath = `${locale}/${routePath}`;
+	}
+
+	return `/${routePath.replace(/\\/g, "/")}/`;
 }
 
 // Module-level cache for dynamic route translations
@@ -239,7 +291,7 @@ export async function generateRouteTranslations() {
 	// Assign and generate unique key names dynamically for each mapped item
 	let itemIndex = 1;
 
-	Object.entries(entriesByMapping).forEach(([mappingKey, localePaths]) => {
+	Object.entries(entriesByMapping).forEach(([, localePaths]) => {
 		const keyName = `content${itemIndex}Key`;
 		itemIndex++;
 

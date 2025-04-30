@@ -1,11 +1,10 @@
 import rss from "@astrojs/rss";
-import { getRelativeLocaleUrl } from "astro:i18n";
+import { getLocalizedRoute } from "@/js/translationUtils";
 import { getCollection, type CollectionEntry } from "astro:content";
 
 // utils
 import { defaultLocale } from "@/config/siteSettings.json";
 import { getTranslatedData } from "@/js/translationUtils";
-import { localizedCollections } from "@/config/translationData.json";
 
 // data
 const siteData = getTranslatedData("siteData", defaultLocale);
@@ -60,14 +59,7 @@ export async function GET(context) {
       `,
 
 			// Compute RSS link from post `slug`
-			link: getRelativeLocaleUrl(
-				rssLocale,
-				`/${
-					localizedCollections.blog && localizedCollections.blog[rssLocale]
-						? localizedCollections.blog[rssLocale]
-						: "blog"
-				}/${post.id}/`,
-			),
+			link: getLocalizedRoute(rssLocale, `/blog/${post.id}/`),
 		})),
 	});
 }

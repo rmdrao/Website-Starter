@@ -1,10 +1,7 @@
 ---
-import { getRelativeLocaleUrl } from "astro:i18n";
-// main layout
+import { getLocalizedRoute } from "@/js/translationUtils";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-// components
 import Button from "@/components/starwind/button";
-// utils
 import { getLocaleFromUrl } from "@/js/localeUtils";
 
 const currLocale = getLocaleFromUrl(Astro.url);
@@ -16,6 +13,6 @@ const currLocale = getLocaleFromUrl(Astro.url);
 	>
 		<h1 class="mb-4 text-6xl font-bold">404</h1>
 		<p class="mb-6 text-xl">Sorry, the page you are looking for could not be found.</p>
-		<Button href={getRelativeLocaleUrl(currLocale, "/")} variant="primary"> Return Home </Button>
+		<Button href={getLocalizedRoute(currLocale, "/")} variant="primary"> Return Home </Button>
 	</section>
 </BaseLayout>
