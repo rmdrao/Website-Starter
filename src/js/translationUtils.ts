@@ -54,7 +54,7 @@ export function getTranslatedData<T extends Locale, K extends DataKey<T>>(
 }
 
 /**
- * Returns the translated route for a given locale and base route. Drop-in replacement for getRelativeLocaleUrl()
+ * * Returns the translated route for a given locale and base route. Drop-in replacement for getRelativeLocaleUrl()
  * Tries to match the longest prefix first, then shorter, for most specific translation.
  * Uses the static routeTranslations object (not async).
  * @param locale - The target locale (e.g., "de")
