@@ -1,6 +1,6 @@
 import type { CollectionEntry, DataEntryMap } from "astro:content";
 
-import { defaultLocale,locales } from "@/config/siteSettings.json";
+import { defaultLocale, locales } from "@/config/siteSettings.json";
 
 /**
  * * returns the current locale gathered from the URL

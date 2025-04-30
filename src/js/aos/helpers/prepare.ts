@@ -2,7 +2,7 @@
 
 // Scroll animations
 import { getAnimation } from "../anime/animations";
-import { type AOSDefaultOptions,type AOSElement } from "./aosTypes";
+import { type AOSDefaultOptions, type AOSElement } from "./aosTypes";
 import getInlineOption from "./getInlineOption";
 import { getPositionIn, getPositionOut } from "./offsetCalculator";
 

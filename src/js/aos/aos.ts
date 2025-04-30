@@ -25,7 +25,7 @@
 import debounce from "lodash.debounce";
 import throttle from "lodash.throttle";
 
-import { type AOSDefaultOptions,type AOSElement } from "./helpers/aosTypes";
+import { type AOSDefaultOptions, type AOSElement } from "./helpers/aosTypes";
 import detect from "./helpers/detector";
 import elements from "./helpers/elements";
 import handleScroll from "./helpers/handleScroll";

@@ -6,9 +6,7 @@ import { type CollectionEntry } from "astro:content";
 
 import Footer from "@/components/footer/Footer.astro";
 import Nav from "@/components/nav/Nav.astro";
-// data
 import siteSettings from "@/config/siteSettings.json";
-// utils
 import { getLocaleFromUrl } from "@/js/localeUtils";
 // component imports
 import BaseHead from "@/layouts/BaseHead.astro";
@@ -63,7 +61,7 @@ const currLocale = getLocaleFromUrl(Astro.url);
 		<!-- Scroll animations -->
 		<script>
 			import siteSettings from "@/config/siteSettings.json";
-import AOS from "@/js/aos/aos";
+			import AOS from "@/js/aos/aos";
 
 			if (siteSettings.useAnimations === true) {
 				// runs on initial page load
