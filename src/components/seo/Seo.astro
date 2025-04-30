@@ -12,8 +12,9 @@ const currLocale = getLocaleFromUrl(Astro.url);
 const siteData = getTranslatedData("siteData", currLocale);
 
 // component import
-import HrefLang from "./HrefLang.astro";
 import jsonLDGenerator from "@/js/jsonLD";
+
+import HrefLang from "./HrefLang.astro";
 
 interface BaseProps {
 	title: string;

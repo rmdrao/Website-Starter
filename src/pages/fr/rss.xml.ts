@@ -1,9 +1,9 @@
 import rss from "@astrojs/rss";
-import { getLocalizedRoute } from "@/js/translationUtils";
-import { getCollection, type CollectionEntry } from "astro:content";
+import { type CollectionEntry,getCollection } from "astro:content";
 
 // utils
 import { defaultLocale } from "@/config/siteSettings.json";
+import { getLocalizedRoute } from "@/js/translationUtils";
 import { getTranslatedData } from "@/js/translationUtils";
 
 // data

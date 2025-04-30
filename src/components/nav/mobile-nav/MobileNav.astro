@@ -1,13 +1,12 @@
 ---
 import { Icon } from "astro-icon/components";
 
+import MobileLanguageSelect from "@/components/language-select/MobileLanguageSelect.astro";
+import MobileNavDropdown from "@/components/nav/mobile-nav/MobileNavDropdown.astro";
 //components
 import NavLink from "@/components/nav/NavLink.astro";
-import MobileNavDropdown from "@/components/nav/mobile-nav/MobileNavDropdown.astro";
 import Button from "@/components/starwind/button";
-import MobileLanguageSelect from "@/components/language-select/MobileLanguageSelect.astro";
 import ThemeToggle from "@/components/theme-toggle/ThemeToggle.astro";
-
 // utils
 import { getLocaleFromUrl } from "@/js/localeUtils";
 import { getTranslatedData } from "@/js/translationUtils";

@@ -1,17 +1,17 @@
 ---
 // components
-import NavLink from "@/components/nav/NavLink.astro";
-import NavDropdownToggle from "./nav-dropdown/NavDropdownToggle.astro";
-import MegaMenuDropdownToggle from "@/components/nav/nav-dropdown/MegaMenuDropdownToggle.astro";
+import LanguageSelect from "@/components/language-select/LanguageSelect.astro";
 import MobileNav from "@/components/nav/mobile-nav/MobileNav.astro";
+import MegaMenuDropdownToggle from "@/components/nav/nav-dropdown/MegaMenuDropdownToggle.astro";
+import NavLink from "@/components/nav/NavLink.astro";
 import SiteLogo from "@/components/site-logo/SiteLogo.astro";
 import Button from "@/components/starwind/button";
-import LanguageSelect from "@/components/language-select/LanguageSelect.astro";
 import ThemeToggle from "@/components/theme-toggle/ThemeToggle.astro";
-
 // utils
 import { getLocaleFromUrl } from "@/js/localeUtils";
 import { getTranslatedData } from "@/js/translationUtils";
+
+import NavDropdownToggle from "./nav-dropdown/NavDropdownToggle.astro";
 
 // data
 const currLocale = getLocaleFromUrl(Astro.url);

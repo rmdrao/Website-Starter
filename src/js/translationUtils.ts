@@ -1,13 +1,14 @@
-import { getRelativeLocaleUrl } from "astro:i18n";
-import { getCollection } from "astro:content";
 import type { DataEntryMap } from "astro:content";
+import { getCollection } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+import { defaultLocale, locales } from "@/config/siteSettings.json";
 import {
-	textTranslations,
 	dataTranslations,
-	routeTranslations,
 	localizedCollections,
+	routeTranslations,
+	textTranslations,
 } from "@/config/translationData.json";
-import { locales, defaultLocale } from "@/config/siteSettings.json";
 
 /**
  * * text translation helper function
