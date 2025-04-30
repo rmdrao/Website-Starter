@@ -10,9 +10,6 @@ import { getTranslatedData } from "@/js/translationUtils";
 // data
 const currLocale = getLocaleFromUrl(Astro.url);
 const siteData = getTranslatedData("siteData", currLocale);
-
-const test = getLocalizedRoute(currLocale, "#test");
-console.log(test);
 ---
 
 <a class="primary-focus text-xl" href={getLocalizedRoute(currLocale, "/")}>
