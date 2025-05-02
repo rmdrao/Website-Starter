@@ -1,15 +1,15 @@
 ---
 import LanguageSelect from "@/components/language-select/LanguageSelect.astro";
-import MobileNav from "@/components/nav/mobile-nav/MobileNav.astro";
-import MegaMenuDropdownToggle from "@/components/nav/nav-dropdown/MegaMenuDropdownToggle.astro";
-import NavLink from "@/components/nav/NavLink.astro";
 import SiteLogo from "@/components/site-logo/SiteLogo.astro";
 import Button from "@/components/starwind/button";
-import ThemeToggle from "@/components/theme-toggle/ThemeToggle.astro";
 import { getLocaleFromUrl } from "@/js/localeUtils";
 import { getTranslatedData } from "@/js/translationUtils";
 
-import NavDropdownToggle from "./nav-dropdown/NavDropdownToggle.astro";
+import MobileNav from "./mobile-nav/MobileNav.astro";
+import MegaMenuDropdownToggle from "./nav-dropdown/MegaMenuDropdownToggle.astro";
+import NavDropdown from "./nav-dropdown/NavDropdown.astro";
+import NavLink from "./NavLink.astro";
+import ThemeToggle from "@/components/theme-toggle/ThemeToggle.astro";
 
 const currLocale = getLocaleFromUrl(Astro.url);
 const navData = getTranslatedData("navData", currLocale);
@@ -35,22 +35,23 @@ import { locales } from "@/config/siteSettings.json";
 
 				<!-- desktop nav menu -->
 				<div class="flex flex-auto justify-end">
-					<nav class="hidden md:block">
+					<nav class="my-auto hidden md:block">
 						<ul class="flex h-fit items-center px-4">
 							{
 								// if dropdown exists, setup the dropdown, otherwise it is just a link
 								navData.map((navItem) =>
 									"dropdown" in navItem ? (
 										// non-mobile dropdown menu
-										<>
-											{/* <NavDropdown navItem={navItem} /> */}
-											<NavDropdownToggle navItem={navItem} />
-										</>
+										<li>
+											<NavDropdown navItem={navItem} />
+										</li>
 									) : "megaMenuColumns" in navItem ? (
 										<MegaMenuDropdownToggle {navItem} />
 									) : (
 										// normal nav link
-										<NavLink {navItem} />
+										<li>
+											<NavLink {navItem} />
+										</li>
 									),
 								)
 							}
