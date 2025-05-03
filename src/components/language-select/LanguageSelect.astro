@@ -28,7 +28,7 @@ const localizedPaths = Object.fromEntries(
 );
 ---
 
-<Dropdown class:list={["my-auto", className]}>
+<Dropdown openOnHover class:list={["my-auto", className]}>
 	<DropdownTrigger asChild>
 		<button
 			type="button"
@@ -53,23 +53,18 @@ const localizedPaths = Object.fromEntries(
 			/>
 		</button>
 	</DropdownTrigger>
-	<DropdownContent align="center" sideOffset={8} class="w-auto min-w-fit p-0">
-		<ul class="mx-auto rounded-md px-3 py-1.5 whitespace-nowrap">
-			{
-				locales.map((lang) => (
-					<li class="flex w-full justify-center" role="none">
-						<a
-							href={localizedPaths[lang]}
-							class="primary-focus nav__link--base relative block w-full py-1 text-center whitespace-nowrap"
-							role="menuitem"
-							aria-label={`Change language to ${lang.toUpperCase()}`}
-							data-astro-reload
-						>
-							{languageSwitcherMap[lang]}
-						</a>
-					</li>
-				))
-			}
-		</ul>
+	<DropdownContent align="center" sideOffset={8} class="w-auto min-w-fit text-sm">
+		{
+			locales.map((lang) => (
+				<a
+					href={localizedPaths[lang]}
+					class="nav__link--base relative block w-full py-1 text-center whitespace-nowrap"
+					aria-label={`Change language to ${lang.toUpperCase()}`}
+					data-astro-reload
+				>
+					{languageSwitcherMap[lang]}
+				</a>
+			))
+		}
 	</DropdownContent>
 </Dropdown>
