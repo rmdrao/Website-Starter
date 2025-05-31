@@ -22,6 +22,7 @@ const blogCollection = defineCollection({
 				.transform((str) => (str ? new Date(str) : undefined)),
 			heroImage: image().optional(),
 			categories: z.array(z.string()),
+			tags: z.array(z.string()),
 			// mappingKey allows you to match entries across languages for SEO purposes
 			mappingKey: z.string().optional(),
 			// blog posts will be excluded from build if draft is "true"

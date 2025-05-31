@@ -74,6 +74,11 @@ const Blog = (locale: (typeof locales)[number]) =>
 				itemLabel: (props) => props.value,
 				validation: { length: { min: 1 } },
 			}),
+			tags: fields.array(fields.text({ label: "Tag" }), {
+				label: "Tags",
+				itemLabel: (props) => props.value,
+				validation: { length: { min: 1 } },
+			}),
 			content: fields.mdx({
 				label: "Content",
 				options: {
@@ -178,6 +183,174 @@ const Authors = (locale: (typeof locales)[number] | "") =>
 	});
 
 /**
+ * * Services collection
+ * This gets used by Astro Content Collections, so if you update this, you'll need to update the Astro Content Collections schema
+ */
+const Services = (locale: (typeof locales)[number]) =>
+	collection({
+		label: `Services (${locale.toUpperCase()})`,
+		slugField: "title",
+		path: `src/data/services/${locale}/*/`,
+		columns: ["title", "order"],
+		entryLayout: "content",
+		format: { contentField: "content" },
+		schema: {
+			title: fields.slug({
+				name: { label: "Title" },
+				slug: {
+					label: "SEO-friendly slug",
+					description: "Never change the slug once a file is published!",
+				},
+			}),
+			titleLong: fields.text({
+				label: "Long Title",
+				validation: { isRequired: true },
+			}),
+			description: fields.text({
+				label: "Description",
+				validation: { isRequired: true },
+			}),
+			draft: fields.checkbox({
+				label: "Draft",
+				description: "Set this service as draft to prevent it from being published.",
+			}),
+			icon: fields.text({
+				label: "Icon",
+				description: "Icon name for this service",
+				validation: { isRequired: true },
+			}),
+			image: fields.image({
+				label: "Service Image",
+				publicPath: "../",
+				validation: { isRequired: true },
+			}),
+			mappingKey: fields.text({
+				label: "Mapping Key",
+				description: "This is used to map entries between languages.",
+			}),
+			order: fields.number({
+				label: "Order",
+				description: "The order this service appears in lists (lower numbers appear first)",
+			}),
+			content: fields.mdx({
+				label: "Content",
+				options: {
+					bold: true,
+					italic: true,
+					strikethrough: true,
+					code: true,
+					heading: [2, 3, 4, 5, 6],
+					blockquote: true,
+					orderedList: true,
+					unorderedList: true,
+					table: true,
+					link: true,
+					image: {
+						directory: `src/data/services/${locale}/`,
+						publicPath: "../",
+					},
+					divider: true,
+					codeBlock: true,
+				},
+				components: {
+					Admonition: ComponentBlocks.Admonition,
+				},
+			}),
+		},
+	});
+
+/**
+ * * Careers collection
+ * This gets used by Astro Content Collections, so if you update this, you'll need to update the Astro Content Collections schema
+ */
+const Careers = (locale: (typeof locales)[number]) =>
+	collection({
+		label: `Careers (${locale.toUpperCase()})`,
+		slugField: "title",
+		path: `src/data/careers/${locale}/*/`,
+		columns: ["title", "category", "location", "type", "publishDate"],
+		entryLayout: "content",
+		format: { contentField: "content" },
+		schema: {
+			title: fields.slug({
+				name: { label: "Title" },
+				slug: {
+					label: "SEO-friendly slug",
+					description: "Never change the slug once a file is published!",
+				},
+			}),
+			category: fields.text({
+				label: "Category",
+				validation: { isRequired: true },
+			}),
+			location: fields.text({
+				label: "Location",
+				validation: { isRequired: true },
+			}),
+			type: fields.select({
+				label: "Job Type",
+				options: [
+					{ label: "Full-time", value: "Full-time" },
+					{ label: "Part-time", value: "Part-time" },
+					{ label: "Contract", value: "Contract" },
+					{ label: "Remote", value: "Remote" },
+				],
+				defaultValue: "Full-time",
+			}),
+			description: fields.text({
+				label: "Short Description",
+				multiline: true,
+				validation: { isRequired: true },
+			}),
+			requirements: fields.array(fields.text({ label: "Requirement" }), {
+				label: "Requirements",
+				itemLabel: (props) => props.value,
+				validation: { length: { min: 1 } },
+			}),
+			applicationUrl: fields.url({
+				label: "Application URL",
+				validation: { isRequired: true },
+			}),
+			publishDate: fields.date({
+				label: "Publish Date",
+				validation: { isRequired: true },
+			}),
+			draft: fields.checkbox({
+				label: "Draft",
+				description: "Set this job posting as draft to prevent it from being published.",
+			}),
+			mappingKey: fields.text({
+				label: "Mapping Key",
+				description: "This is used to map entries between languages.",
+			}),
+			content: fields.mdx({
+				label: "Content",
+				options: {
+					bold: true,
+					italic: true,
+					strikethrough: true,
+					code: true,
+					heading: [2, 3, 4, 5, 6],
+					blockquote: true,
+					orderedList: true,
+					unorderedList: true,
+					table: true,
+					link: true,
+					image: {
+						directory: `src/data/careers/${locale}/`,
+						publicPath: "../",
+					},
+					divider: true,
+					codeBlock: true,
+				},
+				components: {
+					Admonition: ComponentBlocks.Admonition,
+				},
+			}),
+		},
+	});
+
+/**
  * * Other Pages collection
  * For items like legal pages, about pages, etc.
  * This gets used by Astro Content Collections, so if you update this, you'll need to update the Astro Content Collections schema
@@ -240,5 +413,7 @@ const OtherPages = (locale: (typeof locales)[number]) =>
 export default {
 	Blog,
 	Authors,
+	Services,
+	Careers,
 	OtherPages,
 };

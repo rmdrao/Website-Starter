@@ -33,6 +33,12 @@ export default config({
 		// this might look like "author-1-en" and "author-1-fr"
 		authors: Collections.Authors(""),
 
+		servicesEN: Collections.Services("en"),
+		servicesFR: Collections.Services("fr"),
+
+		careersEN: Collections.Careers("en"),
+		careersFR: Collections.Careers("fr"),
+
 		otherPagesEN: Collections.OtherPages("en"),
 		otherPagesFR: Collections.OtherPages("fr"),
 	},
