@@ -1,3 +1,7 @@
+---
+trigger: always_on
+---
+
 # General Rules
 
 - Do not use colors like "blue" and "white". Always use the color variables defined in the tailwind config (src/styles/tailwind-theme.css) which are "primary" and "base"
