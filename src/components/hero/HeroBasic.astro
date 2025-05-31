@@ -6,7 +6,6 @@ import { getTranslatedData, useTranslations } from "@/js/translationUtils";
 const currLocale = getLocaleFromUrl(Astro.url);
 const siteData = getTranslatedData("siteData", currLocale);
 const t = useTranslations(currLocale);
-// siteData is now directly imported and available
 ---
 
 <section

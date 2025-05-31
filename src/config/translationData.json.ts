@@ -7,19 +7,27 @@
  * * Data file configuration for the i18n system
  * Every {Data} key must exist in the below object
  */
+import faqDataEn from "./en/faqData.json";
 import navDataEn from "./en/navData.json";
 import siteDataEn from "./en/siteData.json";
+import testimonialDataEn from "./en/testimonialData.json";
+import faqDataFr from "./fr/faqData.json";
 import navDataFr from "./fr/navData.json";
 import siteDataFr from "./fr/siteData.json";
+import testimonialDataFr from "./fr/testimonialData.json";
 
 export const dataTranslations = {
 	en: {
 		siteData: siteDataEn,
 		navData: navDataEn,
+		testimonialData: testimonialDataEn,
+		faqData: faqDataEn,
 	},
 	fr: {
 		siteData: siteDataFr,
 		navData: navDataFr,
+		testimonialData: testimonialDataFr,
+		faqData: faqDataFr,
 	},
 } as const;
 
@@ -68,12 +76,16 @@ export const routeTranslations = {
 		categoryKey: "categories",
 		categoryKey2: "categories/*",
 		categoryKey3: "categories",
+		blogKey: "blog",
+		servicesKey: "services",
 	},
 	fr: {
 		aboutKey: "a-propos",
 		categoryKey: "categories",
 		categoryKey2: "categories",
 		categoryKey3: "categories/*",
+		blogKey: "blog",
+		servicesKey: "services",
 	},
 } as const;
 
@@ -91,6 +103,10 @@ export const localizedCollections = {
 	blog: {
 		en: "blog",
 		fr: "blog",
+	},
+	services: {
+		en: "services",
+		fr: "services",
 	},
 	// Add more collections/locales as needed
 } as const;
