@@ -58,6 +58,28 @@ const servicesCollection = defineCollection({
 		}),
 });
 
+// careers/job postings
+const careersCollection = defineCollection({
+	loader: glob({ pattern: "**/[^_]*{md,mdx}", base: "./src/data/careers" }),
+	schema: () =>
+		z.object({
+			title: z.string(),
+			category: z.string(),
+			location: z.string(),
+			type: z.enum(["Full-time", "Part-time", "Contract", "Remote"]),
+			description: z.string(),
+			requirements: z.array(z.string()),
+			applicationUrl: z.string().url(),
+			publishDate: z
+				.string()
+				.or(z.date())
+				.transform((val) => new Date(val)),
+			// mappingKey allows you to match entries across languages for SEO purposes
+			mappingKey: z.string().optional(),
+			draft: z.boolean().optional().default(false),
+		}),
+});
+
 // other pages
 const otherPagesCollection = defineCollection({
 	loader: glob({ pattern: "**/[^_]*{md,mdx}", base: "./src/data/otherPages" }),
@@ -74,6 +96,7 @@ const otherPagesCollection = defineCollection({
 export const collections = {
 	blog: blogCollection,
 	authors: authorsCollection,
-	otherPages: otherPagesCollection,
 	services: servicesCollection,
+	careers: careersCollection,
+	otherPages: otherPagesCollection,
 };

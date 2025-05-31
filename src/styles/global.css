@@ -1,10 +1,10 @@
 @import url("./fonts.css");
 
 @import "tailwindcss";
+@import "tw-animate-css";
 
 /* tailwind plugins */
 @plugin "@tailwindcss/forms";
-@plugin "tailwindcss-animate";
 
 /* dark mode */
 @custom-variant dark (&:where(.dark, .dark *));
