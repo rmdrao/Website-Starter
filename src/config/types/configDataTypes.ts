@@ -39,7 +39,24 @@ export interface navMegaDropdownItem {
 	megaMenuColumns: navMegaDropdownColumn[];
 }
 
-export type navItem = navLinkItem | navDropdownItem | navMegaDropdownItem;
+// --------------------------------------------------------
+// faq data types
+export interface FaqItem {
+	question: string; // this is the question of the accordion
+	answer: string; // these are the details seen after expanding the accordion
+}
+
+// --------------------------------------------------------
+// testimonial data types
+export interface TestimonialItem {
+	avatar: ImageMetadata; // an imported image
+	name: string;
+	title: string;
+	testimonial: string;
+}
+
+// export type navItem = navLinkItem | navDropdownItem | navMegaDropdownItem;
+export type navItem = navLinkItem | navDropdownItem;
 
 // --------------------------------------------------------
 // site settings types
