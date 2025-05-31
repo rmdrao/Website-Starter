@@ -115,27 +115,75 @@ const navConfig: navItem[] = [
 	// 	],
 	// },
 
-	// regular dropdown
+	// dropdown
 	{
-		text: "Example dropdown",
+		text: "Core Pages",
 		dropdown: [
 			{
-				text: "Example Item 1",
+				text: "Landing One",
 				link: "/",
 			},
 			{
-				text: "Example Item 2",
-				link: "/",
+				text: "Landing Two",
+				link: "/examples/landing-2",
 			},
 			{
-				text: "Example Item 3",
-				link: "/",
+				text: "Landing Three",
+				link: "/examples/landing-3",
 			},
+			{
+				text: "About",
+				link: "/about",
+			},
+			{
+				text: "Services",
+				link: "/services",
+			},
+			{
+				text: "Service Page",
+				link: "/services/pediatrics",
+			},
+			{
+				text: "Blog",
+				link: "/blog",
+			},
+			{
+				text: "Blog Post One",
+				link: "/blog/tsconfig-paths-setup",
+			},
+			{
+				text: "Blog Post Two",
+				link: "/examples/blog-post-2",
+			},
+			{
+				text: "Categories",
+				link: "/categories",
+			},
+			{
+				text: "Elements",
+				link: "/elements",
+			},
+			// {
+			// 	text: "404",
+			// 	link: "/not-a-link",
+			// },
+			// {
+			// 	text: "RSS Feed",
+			// 	link: "/rss.xml",
+			// },
 		],
+	},
+	{
+		text: "Services",
+		link: "/services",
 	},
 	{
 		text: "Blog",
 		link: "/blog",
+	},
+	{
+		text: "About",
+		link: "/about",
 	},
 ];
 

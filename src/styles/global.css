@@ -108,7 +108,7 @@
 
 	/* styles navbar links */
 	.nav__link--base {
-		@apply text-muted-foreground hover:text-foreground transition;
+		@apply text-muted-foreground hover:text-foreground leading-tight transition;
 	}
 
 	.h1 {

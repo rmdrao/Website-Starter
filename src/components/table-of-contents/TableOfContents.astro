@@ -28,7 +28,7 @@ const filteredHeadings = headings.filter((heading) => heading.depth <= levels + 
 						href={`#${heading.slug}`}
 						class:list={[
 							"toc-link group text-muted-foreground py-1",
-							"hover:text-primary transition-colors",
+							"hover:text-foreground transition-colors",
 						]}
 					>
 						{heading.text}
@@ -97,7 +97,7 @@ const filteredHeadings = headings.filter((heading) => heading.depth <= levels + 
 
 <style>
 	.toc-link.toc-current {
-		color: var(--color-primary);
+		color: var(--color-foreground);
 	}
 
 	.scroll-mt-20 {

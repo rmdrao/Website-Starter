@@ -80,14 +80,14 @@ const authorsData = await getEntries(authors);
 			<!-- blog post main image -->
 			{
 				heroImage && (
-					<div class="mt-6 max-w-[1000px] overflow-hidden rounded-lg md:rounded-xl">
+					<div class="mt-6 max-w-[1000px] overflow-hidden rounded-xl md:rounded-2xl">
 						<Image
 							src={heroImage}
 							alt={`Cover for ${title}`}
 							width={1000}
 							densities={[1.5, 2]}
 							quality="high"
-							class="max-h-[70vh] rounded-lg object-cover md:rounded-xl"
+							class="max-h-[70vh] rounded-xl object-cover md:rounded-2xl"
 							loading="eager"
 							format="webp"
 							transition:name={`post-image-${post.id}`}
