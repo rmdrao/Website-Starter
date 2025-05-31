@@ -59,6 +59,7 @@ export const textTranslations = {
 		updated: "Updated",
 		share_this_article: "Share this article",
 		table_of_contents: "Table of Contents",
+		tags: "Tags",
 
 		// Authentication - Sign In
 		signin_title: "Log in to your account",
@@ -90,6 +91,7 @@ export const textTranslations = {
 		updated: "Mis à jour",
 		share_this_article: "Partager cet article",
 		table_of_contents: "Table des matières",
+		tags: "Tags",
 
 		// Authentication - Sign In
 		signin_title: "Connectez-vous à votre compte",
@@ -132,6 +134,9 @@ export const routeTranslations = {
 		categoryKey: "categories",
 		categoryKey2: "categories/*",
 		categoryKey3: "categories",
+		tagKey: "tags",
+		tagKey2: "tags/*",
+		tagKey3: "tags",
 		blogKey: "blog",
 		servicesKey: "services",
 	},
@@ -140,6 +145,9 @@ export const routeTranslations = {
 		categoryKey: "categories",
 		categoryKey2: "categories",
 		categoryKey3: "categories/*",
+		tagKey: "tags",
+		tagKey2: "tags",
+		tagKey3: "tags/*",
 		blogKey: "blog",
 		servicesKey: "services",
 	},

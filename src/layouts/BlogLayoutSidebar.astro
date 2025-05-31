@@ -5,6 +5,7 @@ import { type CollectionEntry, getEntries } from "astro:content";
 
 import Button from "@/components/button/Button.astro";
 import Category from "@/components/category/Category.astro";
+import Tag from "@/components/tag/Tag.astro";
 import TableOfContents from "@/components/table-of-contents/TableOfContents.astro";
 import { getLocaleFromUrl } from "@/js/localeUtils";
 import { formatDate } from "@/js/textUtils";
@@ -19,7 +20,8 @@ interface Props {
 }
 
 const { post, headings } = Astro.props as Props;
-const { title, description, authors, pubDate, categories, updatedDate, heroImage } = post.data;
+const { title, description, authors, pubDate, categories, tags, updatedDate, heroImage } =
+	post.data;
 
 const currLocale = getLocaleFromUrl(Astro.url);
 const t = useTranslations(currLocale);
@@ -57,7 +59,7 @@ const authorsData = await getEntries(authors);
 							width={1250}
 							densities={[1.5, 2]}
 							quality="high"
-							class="max-h-[70vh] rounded-xl object-cover md:rounded-2xl"
+							class="max-h-[70vh] w-full rounded-xl object-cover md:rounded-2xl"
 							loading="eager"
 							format="webp"
 							transition:name={`post-image-${post.id}`}
@@ -124,14 +126,21 @@ const authorsData = await getEntries(authors);
 					</div>
 				</aside>
 			</div>
-			<Button
-				href={getLocalizedRoute(currLocale, "/blog")}
-				variant="primary"
-				arrow="left"
-				class="mt-12"
-			>
-				{t("back_to_all_posts")}
-			</Button>
+			<div class="mt-12 flex items-center justify-between border-t pt-6">
+				{
+					tags && tags.length > 0 && (
+						<div class="flex flex-wrap items-center gap-2">
+							<span>{t("tags")}:</span>
+							{tags.map((tag: string) => (
+								<Tag tag={tag} />
+							))}
+						</div>
+					)
+				}
+				<Button variant="primary" href={getLocalizedRoute(currLocale, "/blog")}>
+					{t("back_to_all_posts")}
+				</Button>
+			</div>
 		</div>
 	</article>
 </BaseLayout>
