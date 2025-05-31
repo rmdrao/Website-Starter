@@ -33,7 +33,7 @@ const { navItem } = Astro.props as Props;
 			/>
 		</button>
 	</DropdownTrigger>
-	<DropdownContent align="start" sideOffset={8}>
+	<DropdownContent align="start" sideOffset={12}>
 		{navItem.dropdown.map((dropdownItem) => <NavLink navItem={dropdownItem} class="w-full" />)}
 	</DropdownContent>
 </Dropdown>

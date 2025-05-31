@@ -39,6 +39,8 @@ export interface navMegaDropdownItem {
 	megaMenuColumns: navMegaDropdownColumn[];
 }
 
+export type navItem = navLinkItem | navDropdownItem | navMegaDropdownItem;
+
 // --------------------------------------------------------
 // faq data types
 export interface FaqItem {
@@ -54,9 +56,6 @@ export interface TestimonialItem {
 	title: string;
 	testimonial: string;
 }
-
-// export type navItem = navLinkItem | navDropdownItem | navMegaDropdownItem;
-export type navItem = navLinkItem | navDropdownItem;
 
 // --------------------------------------------------------
 // site settings types
