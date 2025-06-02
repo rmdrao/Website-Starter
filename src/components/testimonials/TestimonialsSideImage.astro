@@ -30,7 +30,7 @@ const sideTestimonials = testimonialData.slice(1, 4);
 			class="bg-primary/10 relative flex aspect-7/8 items-center justify-center rounded-2xl p-6 md:p-10"
 			data-aos="fade-right"
 		>
-			<div class="bg-primary-600 absolute inset-0 h-full w-full overflow-hidden rounded-xl">
+			<div class="bg-primary-600/90 absolute inset-0 h-full w-full overflow-hidden rounded-xl">
 				<Image
 					src={doctorImage}
 					alt="Testimonial background"
@@ -40,7 +40,7 @@ const sideTestimonials = testimonialData.slice(1, 4);
 				/>
 			</div>
 
-			<div class="text-muted relative my-auto flex flex-col items-center justify-center">
+			<div class="relative my-auto flex flex-col items-center justify-center text-white">
 				<div>
 					<!-- 5 star icons -->
 					<div class="flex justify-between gap-1 text-yellow-400">
@@ -51,17 +51,15 @@ const sideTestimonials = testimonialData.slice(1, 4);
 						<Icon class="size-10" name="tabler/star-filled" />
 					</div>
 
-					<blockquote
-						class="text-background mt-6 max-w-xs text-xl leading-loose italic md:text-2xl"
-					>
+					<blockquote class="mt-6 max-w-xs text-xl leading-loose text-white italic md:text-2xl">
 						"{featuredTestimonial.testimonial}"
 					</blockquote>
 
 					<div class="mt-6">
-						<p class="font-heading text-background text-2xl font-extrabold md:text-4xl">
+						<p class="font-heading text-2xl font-extrabold md:text-4xl">
 							{featuredTestimonial.name}
 						</p>
-						<p class="mt-2 text-lg text-white">{featuredTestimonial.title}</p>
+						<p class="mt-2 text-lg">{featuredTestimonial.title}</p>
 					</div>
 				</div>
 			</div>

@@ -10,6 +10,14 @@ This style guide explains how to use Tailwind CSS utility classes, derived from 
 - **Semantic Naming**: The CSS variables have semantic names (e.g., `--color-primary`, `--color-background`). Tailwind generates corresponding utilities (e.g., `bg-primary`, `text-primary-foreground`, `bg-background`). This makes your markup readable and intent clear.
 - **Maintainability**: Modifying the theme (e.g., changing brand colors, adjusting light/dark mode defaults) is done by updating `tailwind-theme.css`. Components styled with Tailwind utilities will automatically reflect these changes.
 
+## Template Theme: Black & White with Primary Accents
+
+- **Overall Aesthetic**: The template primarily uses a black and white color scheme. The `primary` color is reserved for specific accents to draw attention or indicate interactivity.
+- **Primary Color Usage for Accents**:
+    - For non-text accents such as borders, background fills (e.g., on buttons or hover states where the text color provides contrast), and underlines, use Tailwind utilities with the `-primary` suffix (e.g., `border-primary`, `bg-primary`, `decoration-primary`).
+    - For text elements that are directly colored with the primary color (i.e., the text itself is the accent, not its background), always use `text-primary-text`. This ensures appropriate contrast and accessibility, especially in dark mode, distinguishing it from `text-primary` which might be intended for other uses or might not have the same contrast considerations for foreground text.
+- **Hover Effects for Backgrounds**: When an element with a default background (implicitly `bg-background` or explicitly set) has a hover effect that changes its background, the hover state should transition to a muted gray shade, specifically `hover:bg-muted`. This provides a subtle visual feedback without relying on the primary accent color for all hover states.
+
 ## Applying Styles with Tailwind Utilities
 
 ### Colors:
