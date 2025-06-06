@@ -30,7 +30,7 @@ const { data } = service;
 			</div>
 
 			<div
-				class="order-first flex aspect-square justify-center overflow-clip rounded-2xl md:order-last md:rounded-3xl"
+				class="order-first flex aspect-square justify-center overflow-clip rounded-xl md:order-last md:rounded-2xl"
 			>
 				{
 					data.image && (
@@ -39,7 +39,7 @@ const { data } = service;
 							alt={`${data.title} service image`}
 							width={650}
 							densities={[1.5, 2]}
-							class="h-full w-full rounded-2xl object-cover shadow-xl md:rounded-3xl"
+							class="h-full w-full rounded-xl object-cover shadow-xl md:rounded-2xl"
 							loading="eager"
 						/>
 					)

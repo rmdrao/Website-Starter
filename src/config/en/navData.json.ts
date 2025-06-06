@@ -128,10 +128,6 @@ const navConfig: navItem[] = [
 				link: "/examples/landing-services",
 			},
 			{
-				text: "Landing Three",
-				link: "/examples/landing-3",
-			},
-			{
 				text: "About",
 				link: "/about",
 			},
@@ -142,6 +138,14 @@ const navConfig: navItem[] = [
 			{
 				text: "Service Page",
 				link: "/services/pediatrics",
+			},
+			{
+				text: "Careers",
+				link: "/careers",
+			},
+			{
+				text: "Career Page",
+				link: "/careers/ux-designer",
 			},
 			{
 				text: "Blog",
@@ -162,6 +166,10 @@ const navConfig: navItem[] = [
 			{
 				text: "Categories",
 				link: "/categories",
+			},
+			{
+				text: "Tags",
+				link: "/tags",
 			},
 			{
 				text: "Elements",

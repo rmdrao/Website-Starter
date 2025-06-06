@@ -16,7 +16,7 @@ const currLocale = getLocaleFromUrl(Astro.url);
 
 <div class="w-full">
 	<div
-		class="border-border/30 bg-gradient-radial-dark rounded-5xl relative flex h-full flex-col justify-between overflow-hidden border px-11 py-14 text-center will-change-transform"
+		class="relative flex h-full flex-col justify-between overflow-hidden rounded-xl border px-11 py-14 text-center shadow-md will-change-transform"
 	>
 		<div>
 			<a
@@ -39,11 +39,5 @@ const currLocale = getLocaleFromUrl(Astro.url);
 				<span class="">{type}</span>
 			</li>
 		</ul>
-
-		<!-- corner glow -->
-		<div
-			class="to-primary dark:to-blueGray-500 absolute right-0 bottom-0 size-44 bg-gradient-to-br from-transparent via-transparent blur-lg"
-		>
-		</div>
 	</div>
 </div>
