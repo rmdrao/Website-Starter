@@ -2,10 +2,10 @@ import { type SiteDataProps } from "../types/configDataTypes";
 
 // Update this file with your site specific information
 const siteData: SiteDataProps = {
-	name: "Starter",
+	name: "The Starter",
 	// Your website's title and description (meta fields)
 	title:
-		"Starter - The kitchen sink starter for many types of sites like SaaS, business, and blogs. Remove what you don't need and deploy.",
+		"The Starter - The kitchen sink starter for many types of sites like SaaS, business, and blogs. Remove what you don't need and deploy.",
 	description:
 		"Create an amazing website for your small business clients with our beautiful website theme designed using Astro and Tailwind CSS. Perfect for freelancers, developers, startups, and personal use.",
 
