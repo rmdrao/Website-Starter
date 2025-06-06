@@ -1,12 +1,10 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 
-import BaseLayout from "@/layouts/BaseLayout.astro";
-
 import CareerGrid from "@/components/career/CareerGrid.astro";
-
 import { filterCollectionByLanguage } from "@/js/localeUtils";
 import { getLocaleFromUrl } from "@/js/localeUtils";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 
 const currLocale = getLocaleFromUrl(Astro.url);
 

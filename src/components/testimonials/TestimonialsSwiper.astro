@@ -4,10 +4,10 @@ import "swiper/css";
 import ArrowLeft from "@tabler/icons/outline/arrow-left.svg";
 import ArrowRight from "@tabler/icons/outline/arrow-right.svg";
 
+import Badge from "@/components/badge/Badge.astro";
 import TestimonialSlide from "@/components/testimonials/TestimonialSlide.astro";
 import { getLocaleFromUrl } from "@/js/localeUtils";
 import { getTranslatedData } from "@/js/translationUtils";
-import Badge from "@/components/badge/Badge.astro";
 
 const currLocale = getLocaleFromUrl(Astro.url);
 const testimonialData = getTranslatedData("testimonialData", currLocale);
