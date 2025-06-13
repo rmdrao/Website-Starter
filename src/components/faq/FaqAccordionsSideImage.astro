@@ -32,7 +32,7 @@ const faqData = getTranslatedData("faqData", currLocale);
 						{
 							faqData.map((faqItem, idx) => (
 								<AccordionItem value={`item-${idx}`} class="border-border border-b-2 pb-1">
-									<AccordionTrigger class="font-heading px-0 py-4 text-lg font-bold">
+									<AccordionTrigger class="font-heading px-0 py-4 text-lg font-semibold">
 										{faqItem.question}
 									</AccordionTrigger>
 									<AccordionContent
