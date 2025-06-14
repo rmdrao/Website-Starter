@@ -37,7 +37,7 @@
 		--primary-foreground: var(--color-base-50);
 
 		/* Secondary colors for <Button>, etc. when variant="secondary" */
-		--secondary: var(--color-fuchsia-700);
+		--secondary: var(--color-base-950);
 		--secondary-foreground: var(--color-base-50);
 
 		/* Muted colors used for <TabsList>, <Avatar>, etc. */
@@ -93,7 +93,7 @@
 		--popover-foreground: var(--color-base-50);
 		--primary: var(--color-primary-700);
 		--primary-foreground: var(--color-base-50);
-		--secondary: var(--color-fuchsia-300);
+		--secondary: var(--color-base-50);
 		--secondary-foreground: var(--color-base-950);
 		--muted: var(--color-base-900);
 		--muted-foreground: var(--color-base-400);

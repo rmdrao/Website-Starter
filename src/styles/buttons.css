@@ -16,7 +16,7 @@
 
 /* gradient version of primary button */
 .button--secondary {
-	@apply text-primary-foreground bg-secondary hover:bg-secondary/90;
+	@apply text-secondary-foreground bg-secondary hover:bg-secondary/90;
 }
 
 .button--outline {
