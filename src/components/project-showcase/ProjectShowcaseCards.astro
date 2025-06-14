@@ -1,6 +1,6 @@
 ---
-import { filterCollectionByLanguage } from "@js/localeUtils";
-import { getLocaleFromUrl } from "@js/localeUtils";
+import { filterCollectionByLanguage } from "@/js/localeUtils";
+import { getLocaleFromUrl } from "@/js/localeUtils";
 import { getCollection } from "astro:content";
 import { type CollectionEntry } from "astro:content";
 
@@ -22,7 +22,7 @@ const sortedProjects = filteredProjects.sort(
 );
 ---
 
-<section id="showcase-cards" class="dark bg-background text-foreground py-16 md:py-32">
+<section id="showcase-cards" class="bg-background text-foreground py-16 md:py-24">
 	<div class="site-container mx-auto px-4">
 		<h2 class="h2 mb-16 text-center" data-aos="fade-up">Featured Work</h2>
 		<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3" id="project-cards">

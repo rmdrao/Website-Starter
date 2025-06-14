@@ -78,7 +78,7 @@
 
 /* anchor tags */
 .markdown-content a:not(:where(.not-content *)) {
-	@apply text-foreground decoration-primary-600 hover:text-primary underline underline-offset-2 transition-colors;
+	@apply text-foreground decoration-accent hover:text-accent underline underline-offset-2 transition-colors;
 }
 
 /* code */

@@ -117,7 +117,7 @@ const navConfig: navItem[] = [
 
 	// dropdown
 	{
-		text: "Core Pages",
+		text: "Landing Pages",
 		dropdown: [
 			{
 				text: "Landing One",
@@ -127,6 +127,17 @@ const navConfig: navItem[] = [
 				text: "Services Landing",
 				link: "/examples/landing-services",
 			},
+			{
+				text: "Portfolio Landing",
+				link: "/examples/landing-portfolio",
+			},
+		],
+	},
+
+	// dropdown
+	{
+		text: "Core Pages",
+		dropdown: [
 			{
 				text: "About",
 				link: "/about",
@@ -150,6 +161,14 @@ const navConfig: navItem[] = [
 			{
 				text: "Projects",
 				link: "/projects",
+			},
+			{
+				text: "Project Page",
+				link: "/projects/ai-content-platform",
+			},
+			{
+				text: "Resume",
+				link: "/resume",
 			},
 			{
 				text: "Blog",
@@ -190,16 +209,8 @@ const navConfig: navItem[] = [
 		],
 	},
 	{
-		text: "Services",
-		link: "/services",
-	},
-	{
 		text: "Blog",
 		link: "/blog",
-	},
-	{
-		text: "About",
-		link: "/about",
 	},
 ];
 

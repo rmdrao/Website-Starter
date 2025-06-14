@@ -35,10 +35,7 @@ const faqData = getTranslatedData("faqData", currLocale);
 									<AccordionTrigger class="font-heading px-0 py-4 text-lg font-semibold">
 										{faqItem.question}
 									</AccordionTrigger>
-									<AccordionContent
-										class="markdown-content text-muted-foreground px-0"
-										details={faqItem.answer}
-									/>
+									<AccordionContent class="text-muted-foreground px-0" details={faqItem.answer} />
 								</AccordionItem>
 							))
 						}

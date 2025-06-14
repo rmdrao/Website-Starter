@@ -30,13 +30,13 @@ const { title, description, image, technologies, ...rest } = project.data;
 		data-aos={animations ? (imageSide === "right" ? "fade-left" : "fade-right") : undefined}
 	>
 		<div class="relative">
-			<div class="relative overflow-hidden rounded-2xl border">
+			<div class="relative overflow-hidden rounded-xl border">
 				<Image
 					src={image}
 					width={800}
 					densities={[1.5, 2]}
 					alt={title}
-					class="aspect-[4/3] w-full transform object-cover transition-transform duration-500 group-hover:scale-105"
+					class="aspect-[4/3] w-full object-cover"
 				/>
 			</div>
 		</div>
@@ -53,15 +53,13 @@ const { title, description, image, technologies, ...rest } = project.data;
 	>
 		<div class="space-y-6">
 			<h3 class="h3">{title}</h3>
-			<p class="description leading-relaxed">{description}</p>
+			<p class="text-muted-foreground">{description}</p>
 
 			{/* Technologies */}
 			<div class="flex flex-wrap gap-2">
 				{
 					technologies.map((tech) => (
-						<span class="bg-primary/5 text-primary dark:bg-base-800 dark:text-primary-foreground rounded-full px-3 py-1 text-sm">
-							{tech}
-						</span>
+						<span class="bg-border text-foreground rounded-full px-3 py-1 text-sm">{tech}</span>
 					))
 				}
 			</div>

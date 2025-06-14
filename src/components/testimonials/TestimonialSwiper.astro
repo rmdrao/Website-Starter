@@ -1,5 +1,4 @@
 ---
-import Blur from "@images/testimonials/blur.png";
 import testimonialImage from "@images/testimonials/man.png";
 import ArrowLeft from "@tabler/icons/outline/arrow-left.svg";
 import ArrowRight from "@tabler/icons/outline/arrow-right.svg";
@@ -25,7 +24,7 @@ const testimonialsSlice = testimonials.slice(0, 6);
 			<h2 class="h1">What people are saying</h2>
 		</div>
 		<div
-			class="bg-gradient-radial-dark rounded-5xl border-border/30 relative overflow-hidden border p-3"
+			class="border-border relative overflow-hidden rounded-3xl border p-3 shadow-md"
 			data-aos="fade-up"
 			data-aos-delay="0.3"
 		>
@@ -66,12 +65,6 @@ const testimonialsSlice = testimonials.slice(0, 6);
 					</div>
 				</div>
 			</div>
-			<Image
-				src={Blur}
-				quality={100}
-				alt=""
-				class="absolute bottom-0 left-1/2 -translate-x-1/2 transform"
-			/>
 		</div>
 	</div>
 </section>

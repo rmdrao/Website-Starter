@@ -1,0 +1,48 @@
+---
+import AboutMe from "@/components/about/AboutMe.astro";
+import BlogSectionGrid from "@/components/blog/BlogSectionGrid.astro";
+import Contact from "@/components/contact/Contact.astro";
+import FaqAccordions from "@/components/faq/FaqAccordions.astro";
+import FaqCards from "@/components/faq/FaqCards.astro";
+import HeroCentered from "@/components/hero/HeroCentered.astro";
+import LogoCloudMarquee from "@/components/logo-cloud/LogoCloudMarquee.astro";
+import LogoCloudStatic from "@/components/logo-cloud/LogoCloudStatic.astro";
+import PricingOnePrice from "@/components/pricing/PricingOnePrice.astro";
+// import PricingThreeCards from "@/components/pricing/PricingThreeCards.astro";
+// import PricingTwoCards from "@/components/pricing/PricingTwoCards.astro";
+// import ProcessSectionHorizontal from "@/components/process/ProcessSectionHorizontal.astro";
+import ProcessSectionVertical from "@/components/process/ProcessSectionVertical.astro";
+import ProjectShowcaseCards from "@/components/project-showcase/ProjectShowcaseCards.astro";
+import ProjectShowcaseSideImage from "@/components/project-showcase/ProjectShowcaseSideImage.astro";
+import TestimonialCards from "@/components/testimonials/TestimonialCards.astro";
+import TestimonialSwiper from "@/components/testimonials/TestimonialSwiper.astro";
+import { getLocaleFromUrl } from "@/js/localeUtils";
+import { getTranslatedData } from "@/js/translationUtils";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const currLocale = getLocaleFromUrl(Astro.url);
+const siteData = getTranslatedData("siteData", currLocale);
+---
+
+<BaseLayout title={siteData.title} description={siteData.description} navStyle="dark">
+	<HeroCentered />
+	<!-- <LogoCloudStatic /> -->
+	<LogoCloudMarquee />
+	<AboutMe />
+	<ProjectShowcaseCards />
+	<ProjectShowcaseSideImage />
+	<ProcessSectionVertical />
+
+	<!-- TODO: still need to add / adjust other pricing sections -->
+	<!-- <ProcessSectionHorizontal /> -->
+	<!-- <PricingThreeCards /> -->
+	<!-- <PricingTwoCards /> -->
+
+	<PricingOnePrice />
+	<TestimonialSwiper />
+	<TestimonialCards />
+	<BlogSectionGrid />
+	<Contact />
+	<FaqAccordions />
+	<!-- <FaqCards /> -->
+</BaseLayout>

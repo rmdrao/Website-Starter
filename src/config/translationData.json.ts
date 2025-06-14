@@ -53,6 +53,7 @@ export const dataTranslations = {
 export const textTranslations = {
 	en: {
 		hero_text: "Everything you need for an amazing website.",
+		hero_description: `Transforming ideas into beautiful, functional designs that leave lasting impressions.`,
 
 		// blog
 		back_to_all_posts: "Back to all posts",
@@ -85,6 +86,8 @@ export const textTranslations = {
 	},
 	fr: {
 		hero_text: "Tout ce dont vous avez besoin pour un site Web incroyable.",
+		hero_description:
+			"Je ne parle pas vraiment français donc j'utilise Google Translate pour quelques parties de cette démo.",
 
 		// blog
 		back_to_all_posts: "Retour à tous les articles",
