@@ -22,10 +22,7 @@ const { number, title, description, icon } = Astro.props;
 		</div>
 
 		<!-- Icon -->
-		<div
-			class="text-accent bg-base-100 dark:bg-background mb-4 text-4xl transition-transform duration-300 group-hover:scale-110"
-			aria-hidden="true"
-		>
+		<div class="text-accent bg-background mb-4 text-4xl" aria-hidden="true">
 			<Icon name={icon} class="h-8 w-8" />
 		</div>
 
@@ -36,11 +33,5 @@ const { number, title, description, icon } = Astro.props;
 		<p class="description text-base">
 			{description}
 		</p>
-	</div>
-
-	<!-- Hover Effect Background -->
-	<div
-		class="group-hover:border-primary/30 group-hover:shadow-primary/5 border-base-200 absolute inset-0 -z-10 rounded-2xl border bg-white transition-all duration-300 group-hover:shadow-xl"
-	>
 	</div>
 </div>
