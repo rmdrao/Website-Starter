@@ -3,14 +3,15 @@
  * * FAQ section in accordions
  */
 
+import { getLocaleFromUrl } from "@/js/localeUtils";
+import { getTranslatedData } from "@/js/translationUtils";
+
 import {
 	Accordion,
 	AccordionContent,
 	AccordionItem,
 	AccordionTrigger,
 } from "./faq-accordion-standard";
-import { getLocaleFromUrl } from "@/js/localeUtils";
-import { getTranslatedData } from "@/js/translationUtils";
 
 const currLocale = getLocaleFromUrl(Astro.url);
 const faqData = getTranslatedData("faqData", currLocale);

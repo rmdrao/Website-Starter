@@ -1,10 +1,10 @@
 ---
-import { filterCollectionByLanguage } from "@/js/localeUtils";
-import { getLocaleFromUrl } from "@/js/localeUtils";
 import { getCollection } from "astro:content";
 import { type CollectionEntry } from "astro:content";
 
 import ProjectCard from "@/components/projects/ProjectCard.astro";
+import { filterCollectionByLanguage } from "@/js/localeUtils";
+import { getLocaleFromUrl } from "@/js/localeUtils";
 import { getLocalizedRoute } from "@/js/translationUtils";
 
 const currLocale = getLocaleFromUrl(Astro.url);
