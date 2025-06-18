@@ -120,16 +120,16 @@ const navConfig: navItem[] = [
 		text: "Landing Pages",
 		dropdown: [
 			{
-				text: "Landing One",
-				link: "/",
-			},
-			{
-				text: "Services Landing",
-				link: "/examples/landing-services",
+				text: "SaaS Landing",
+				link: "/examples/landing-saas",
 			},
 			{
 				text: "Portfolio Landing",
 				link: "/examples/landing-portfolio",
+			},
+			{
+				text: "Services Landing",
+				link: "/examples/landing-services",
 			},
 		],
 	},

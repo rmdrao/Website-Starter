@@ -171,6 +171,18 @@ const otherPagesCollection = defineCollection({
 		}),
 });
 
+// each code toggle section is it's own content file
+const codeToggleCollection = defineCollection({
+	loader: glob({ pattern: "**/[^_]*{md,mdx}", base: "./src/data/codeToggles" }),
+	schema: () =>
+		z.object({
+			language: z.string(),
+			order: z.number(),
+			icon: z.string().optional(),
+			draft: z.boolean().optional(),
+		}),
+});
+
 export const collections = {
 	blog: blogCollection,
 	authors: authorsCollection,
@@ -179,4 +191,5 @@ export const collections = {
 	projects: projectsCollection,
 	resume: resumeCollection,
 	otherPages: otherPagesCollection,
+	codeToggles: codeToggleCollection,
 };
