@@ -153,7 +153,7 @@
 }
 
 .markdown-content dt:not(:where(.not-content *)) {
-	@apply font-bold;
+	@apply font-semibold;
 }
 .markdown-content dd:not(:where(.not-content *)) {
 	@apply ps-4;
@@ -208,7 +208,7 @@
 	@apply opacity-90;
 }
 .markdown-content summary:not(:where(.not-content *)) {
-	@apply text-foreground block cursor-pointer font-bold;
+	@apply text-foreground block cursor-pointer font-semibold;
 	/* Expand the outline so that the marker cannot distort it. */
 	margin-inline-start: -0.5rem;
 	padding-inline-start: 0.5rem;

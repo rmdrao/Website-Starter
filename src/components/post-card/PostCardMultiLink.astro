@@ -25,7 +25,7 @@ const authorsData = await getEntries(authors);
 <article class=`${className}` {...rest}>
 	<a
 		href={getLocalizedRoute(currLocale, `/blog/${post.id}/`)}
-		class="flex aspect-video max-h-96 shrink-0 justify-center overflow-hidden rounded-md sm:justify-normal md:rounded-lg"
+		class="flex aspect-video max-h-96 shrink-0 justify-center overflow-hidden rounded-md sm:justify-normal"
 	>
 		{
 			heroImage ? (
@@ -41,8 +41,8 @@ const authorsData = await getEntries(authors);
 					/>
 				</figure>
 			) : (
-				<div class="bg-base-200 flex h-full w-full items-center justify-center p-4 text-center">
-					<h3 class="font-heading text-xl font-bold text-pretty md:text-2xl">{title}</h3>
+				<div class="bg-muted flex h-full w-full items-center justify-center rounded-md border p-4 text-center md:rounded-lg">
+					<h3 class="font-heading text-xl font-semibold text-pretty md:text-2xl">{title}</h3>
 				</div>
 			)
 		}
@@ -70,7 +70,7 @@ const authorsData = await getEntries(authors);
 		<div class="mt-2">
 			<a href={getLocalizedRoute(currLocale, `/blog/${post.id}/`)} class="group transition-colors">
 				<h2
-					class="font-heading border-primary/0 group-hover:border-primary inline border-b-2 text-lg font-semibold transition-colors md:text-2xl"
+					class="font-heading border-accent/0 group-hover:border-accent inline border-b-2 text-lg font-semibold transition-colors md:text-2xl"
 				>
 					{title}
 				</h2>

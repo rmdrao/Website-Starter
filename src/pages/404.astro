@@ -11,7 +11,7 @@ const currLocale = getLocaleFromUrl(Astro.url);
 	<section
 		class="site-container flex min-h-[90vh] flex-col items-center justify-center py-24 text-center"
 	>
-		<h1 class="mb-4 text-6xl font-bold">404</h1>
+		<h1 class="mb-4 text-6xl font-semibold">404</h1>
 		<p class="mb-6 text-xl">Sorry, the page you are looking for could not be found.</p>
 		<Button href={getLocalizedRoute(currLocale, "/")} variant="primary"> Return Home </Button>
 	</section>
