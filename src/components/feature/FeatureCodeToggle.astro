@@ -6,10 +6,11 @@
  * This uses an Astro content collection for the data. Check out src/data/codeToggles for the data
  */
 
-import Badge from "@/components/badge/Badge.astro";
-import { slugify } from "@/js/textUtils";
 import { type CollectionEntry, getCollection, render } from "astro:content";
 import { Icon } from "astro-icon/components";
+
+import Badge from "@/components/badge/Badge.astro";
+import { slugify } from "@/js/textUtils";
 
 // get all code toggle sections
 const codeToggles = await getCollection("codeToggles", ({ data }) => {

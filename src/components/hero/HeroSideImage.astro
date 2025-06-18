@@ -3,12 +3,12 @@
  * * Hero with image one the side
  */
 
-import Button from "@/components/button/Button.astro";
 import heroImage from "@images/hero/storm-2.webp";
-import { getLocaleFromUrl } from "@/js/localeUtils";
-import { useTranslations } from "@/js/translationUtils";
 import { Image } from "astro:assets";
 
+import Button from "@/components/button/Button.astro";
+import { getLocaleFromUrl } from "@/js/localeUtils";
+import { useTranslations } from "@/js/translationUtils";
 import { getLocalizedRoute } from "@/js/translationUtils";
 
 const currLocale = getLocaleFromUrl(Astro.url);
