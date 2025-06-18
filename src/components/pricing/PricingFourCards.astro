@@ -4,12 +4,10 @@
  * This is designed for 3 pricing items, but can be modified to support more
  */
 
-import Badge from "@/components/badge/Badge.astro";
 import Button from "@/components/button/Button.astro";
 import { Switch } from "@/components/starwind/switch";
 import { getLocaleFromUrl } from "@/js/localeUtils";
 import { useTranslations } from "@/js/translationUtils";
-import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 
 import { getLocalizedRoute } from "@/js/translationUtils";
@@ -33,7 +31,6 @@ const pricingData: pricingItem[] = [
 	{
 		name: "Basic",
 		description: "Essential features for beginners. Get started with ease",
-		featured: false,
 		price: {
 			monthly: 29,
 			yearly: 19,
@@ -56,8 +53,7 @@ const pricingData: pricingItem[] = [
 	},
 	{
 		name: "Enterprise",
-		description: "Scale your business faster. Comprehensive plan for large companies",
-		featured: false,
+		description: "Scale your business faster. Comprehensive plan",
 		price: {
 			monthly: 99,
 			yearly: 79,
@@ -66,13 +62,23 @@ const pricingData: pricingItem[] = [
 		href: "/signup",
 		linkText: "Get Started",
 	},
+	{
+		name: "Contact Us",
+		description: "For bespoke solutions tailored to your business needs",
+		price: {
+			custom: true,
+		},
+		features: ["White Glove Onboarding", "All Features", "unlimited Users", "Dedicated support"],
+		href: "/contact",
+		linkText: "Contact Us",
+	},
 ];
 
 const currLocale = getLocaleFromUrl(Astro.url);
 const t = useTranslations(currLocale);
 ---
 
-<section id="pricing-three-cards" class="py-16 md:py-20">
+<section id="pricing-four-cards" class="py-16 md:py-20">
 	<div class="site-container relative">
 		<div class="flex justify-center">
 			<!-- <Badge>Pricing</Badge> -->
@@ -84,17 +90,17 @@ const t = useTranslations(currLocale);
 		<!-- Toggle switch for monthly or yearly pricing -->
 		<div class="mt-6 flex justify-center">
 			<label
-				for="pricing-plan__toggle"
+				for="pricing-four-cards__toggle"
 				class="relative inline-flex cursor-pointer items-center gap-4 select-none"
 			>
 				<span class="description flex items-center">Monthly</span>
-				<Switch id="pricing-three-cards__toggle" variant="primary" padding={4} />
+				<Switch id="pricing-four-cards__toggle" variant="primary" padding={4} />
 				<span class="description flex items-center">Yearly</span>
 			</label>
 		</div>
 
 		<!-- works for 3 pricing plans, adjust grid cols here to support more or less -->
-		<div class="mx-auto mt-16 grid w-full gap-6 sm:grid-cols-2 md:mt-20 lg:grid-cols-3">
+		<div class="mx-auto mt-16 grid w-full gap-6 sm:grid-cols-2 md:mt-20 lg:grid-cols-4">
 			{
 				pricingData.map((plan) => (
 					<div class="pricing-plan w-full">
@@ -126,7 +132,7 @@ const t = useTranslations(currLocale);
 										<h4>
 											<span class="text-4xl font-medium">Custom</span>
 										</h4>
-										<span aria-hidden="true" class="description invisible inline-block">
+										<span aria-hidden="true" class="text-muted-foreground invisible inline-block">
 											per user, per month
 										</span>
 									</>
@@ -134,21 +140,21 @@ const t = useTranslations(currLocale);
 									<>
 										<div class="pricing-monthly">
 											<h4 class="text-4xl font-medium">${plan.price.monthly} / mo</h4>
-											<span class="description inline-block text-sm">(paid monthly)</span>
+											<span class="text-muted-foreground inline-block text-sm">(paid monthly)</span>
 										</div>
 										<div class="pricing-yearly hidden">
 											<h4 class="text-4xl font-medium">${plan.price.yearly} / mo</h4>
-											<span class="description inline-block text-sm">(paid yearly)</span>
+											<span class="text-muted-foreground inline-block text-sm">(paid yearly)</span>
 										</div>
 									</>
 								)}
 
 								<div class="mt-8 border-y py-8">
 									<p
-										class="description mx-auto max-w-xs"
+										class="text-muted-foreground mx-auto max-w-xs"
 										class:list={[
 											{
-												"text-muted-foreground": plan.featured === true,
+												"text-foreground": plan.featured === true,
 											},
 										]}
 									>
@@ -192,8 +198,8 @@ const t = useTranslations(currLocale);
 	import type { SwitchChangeEvent } from "@/components/starwind/switch";
 
 	function pricingPlanToggleSetup() {
-		const pricingSection = document.getElementById("pricing-three-cards");
-		const toggle = pricingSection?.querySelector("#pricing-three-cards__toggle");
+		const pricingSection = document.getElementById("pricing-four-cards");
+		const toggle = pricingSection?.querySelector("#pricing-four-cards__toggle");
 		const monthlyPrices = pricingSection?.querySelectorAll(".pricing-monthly");
 		const yearlyPrices = pricingSection?.querySelectorAll(".pricing-yearly");
 
