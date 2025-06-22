@@ -29,19 +29,16 @@ const aboutCardsData = [
 ];
 ---
 
-<section
-	id="testimonials-side"
-	class="from-primary-500/20 to-background my-12 rounded-b-2xl bg-gradient-to-t py-12 md:rounded-b-3xl"
->
+<section id="about-side-cards" class="my-12 py-12">
 	<div class="site-container mt-12 grid gap-8 lg:grid-cols-2 lg:gap-20">
 		<div
-			class="bg-primary/10 relative flex aspect-7/8 items-center justify-center rounded-2xl p-6 pt-20 md:px-10"
+			class="relative flex aspect-7/8 items-center justify-center rounded-2xl p-6 pt-20 md:px-10"
 			data-aos="fade-right"
 		>
-			<div class="bg-primary-600 absolute inset-0 h-full w-full overflow-hidden rounded-xl">
+			<div class="bg-primary absolute inset-0 h-full w-full overflow-hidden rounded-xl">
 				<Image
 					src={doctorImage}
-					alt="Testimonial background"
+					alt="About background"
 					width={500}
 					densities={[1.5, 2]}
 					class="h-full w-full object-cover mix-blend-overlay"
@@ -61,10 +58,10 @@ const aboutCardsData = [
 					<div class="">
 						<div class="flex items-center gap-4">
 							<div class="shrink-0">
-								<Icon name={card.icon} class="text-accent-500/80 size-14" />
+								<Icon name={card.icon} class="text-accent size-14" />
 							</div>
 							<div>
-								<h3 class="text-accent h2">{card.title}</h3>
+								<h3 class="h2">{card.title}</h3>
 							</div>
 						</div>
 						<p class="text-muted-foreground mt-4 md:text-lg">{card.description}</p>
