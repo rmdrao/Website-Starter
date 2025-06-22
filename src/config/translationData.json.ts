@@ -62,28 +62,6 @@ export const textTranslations = {
 		table_of_contents: "Table of Contents",
 		tags: "Tags",
 		related_posts: "Related Posts",
-
-		// Authentication - Sign In
-		signin_title: "Log in to your account",
-		signin_welcome: "Good to have you back!",
-		signin_with_google: "Sign in with Google",
-		signin_with_apple: "Sign in with Apple",
-		signin_with_email: "or sign in with email",
-		email_placeholder: "Enter your email",
-		password_placeholder: "Enter your password",
-		login_button: "Log in",
-		no_account: "Don't have an account? ",
-		signup_link: "Sign up",
-
-		// Authentication - Sign Up
-		signup_title: "Create your account",
-		signup_welcome: "Join our community today!",
-		signup_with_google: "Sign up with Google",
-		signup_with_apple: "Sign up with Apple",
-		signup_with_email: "or sign up with email",
-		signup_button: "Sign up",
-		have_account: "Already have an account? ",
-		signin_link: "Sign in",
 	},
 	fr: {
 		hero_text: "Tout ce dont vous avez besoin pour un site Web incroyable.",
@@ -97,28 +75,6 @@ export const textTranslations = {
 		table_of_contents: "Table des matières",
 		tags: "Tags",
 		related_posts: "Articles liés",
-
-		// Authentication - Sign In
-		signin_title: "Connectez-vous à votre compte",
-		signin_welcome: "Heureux de vous revoir !",
-		signin_with_google: "Se connecter avec Google",
-		signin_with_apple: "Se connecter avec Apple",
-		signin_with_email: "ou connectez-vous avec e-mail",
-		email_placeholder: "Entrez votre e-mail",
-		password_placeholder: "Entrez votre mot de passe",
-		login_button: "Se connecter",
-		no_account: "Vous n'avez pas de compte ? ",
-		signup_link: "S'inscrire",
-
-		// Authentication - Sign Up
-		signup_title: "Créez votre compte",
-		signup_welcome: "Rejoignez notre communauté aujourd'hui !",
-		signup_with_google: "S'inscrire avec Google",
-		signup_with_apple: "S'inscrire avec Apple",
-		signup_with_email: "ou inscrivez-vous avec e-mail",
-		signup_button: "S'inscrire",
-		have_account: "Vous avez déjà un compte ? ",
-		signin_link: "Se connecter",
 	},
 } as const;
 
