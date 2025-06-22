@@ -3,7 +3,7 @@ import AboutNumbers from "@/components/about/AboutNumbersImage.astro";
 import Contact from "@/components/contact/Contact.astro";
 import ContactCentered from "@/components/contact/ContactCentered.astro";
 import FaqAccordionsSideImage from "@/components/faq/FaqAccordionsSideImage.astro";
-import HeroShapes from "@/components/hero/HeroShapes.astro";
+import HeroBackgroundImage from "@/components/hero/HeroBackgroundImage.astro";
 import ServicesCards from "@/components/services/ServicesCards.astro";
 import ServicesSwiper from "@/components/services/ServicesSwiper.astro";
 import TeamSwiper from "@/components/team/TeamSwiper.astro";
@@ -18,7 +18,7 @@ const siteData = getTranslatedData("siteData", currLocale);
 ---
 
 <BaseLayout title={siteData.title} description={siteData.description}>
-	<HeroShapes />
+	<HeroBackgroundImage />
 
 	<TeamSwiper />
 	<AboutNumbers />

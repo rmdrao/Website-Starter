@@ -208,9 +208,24 @@ const navConfig: navItem[] = [
 			// },
 		],
 	},
+
+	// dropdown
 	{
-		text: "Blog",
-		link: "/blog",
+		text: "Forms",
+		dropdown: [
+			{
+				text: "Sign Up",
+				link: "/sign-up",
+			},
+			{
+				text: "Sign In",
+				link: "/sign-in",
+			},
+			{
+				text: "Password Reset",
+				link: "/password-reset",
+			},
+		],
 	},
 ];
 

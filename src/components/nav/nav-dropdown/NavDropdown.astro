@@ -21,8 +21,7 @@ const { navItem } = Astro.props as Props;
 	<DropdownTrigger asChild>
 		<button
 			type="button"
-			class="primary-focus nav__dropdown-button nav__link--base flex h-10 w-full items-center gap-0.5 px-3 py-2 whitespace-nowrap"
-			id={`${slugify(navItem.text)}-dropdown-menu`}
+			class="primary-focus nav__dropdown-button nav__link--base flex h-10 w-full items-center gap-0.5 rounded-md px-3 py-2 whitespace-nowrap"
 			aria-haspopup="true"
 		>
 			{navItem.text}

@@ -179,7 +179,7 @@
 @layer utilities {
 	/* focus utility class (for when user is tabbing through items on page) */
 	.primary-focus {
-		@apply focus-visible:outline-primary-500 focus-visible:rounded-xs focus-visible:outline-2;
+		@apply focus-visible:outline-outline focus-visible:outline-2;
 	}
 
 	/* use with "animate-pause" to pause a CSS animation */
