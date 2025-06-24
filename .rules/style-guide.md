@@ -53,6 +53,23 @@ Tailwind generates font family utilities from your theme (e.g., `font-sans`, `fo
 
 Use Tailwind's standard spacing (padding, margin, width, height), flexbox, and grid utilities. These are highly configurable in your `src/styles/global.css` and `src/styles/tailwind-theme.css` files if needed.
 
+## Components
+
+### Button Component
+
+- **Always use the Button component** where possible instead of raw HTML buttons or links. It is imported from `@/components/button/Button.astro`.
+- The Button component ensures consistent styling, proper accessibility attributes, and supports various variants like primary, secondary, and outline.
+- Example usage:
+  ```astro
+  ---
+  import Button from "@/components/button/Button.astro";
+  ---
+  
+  <Button href="/contact">Contact Us</Button>
+  <Button variant="outline">Learn More</Button>
+  <Button variant="secondary" type="submit">Submit Form</Button>
+  ```
+
 ## When to Use `<style>` Tags (Direct CSS Variable Usage)
 
 While utility classes are preferred, there are cases for using `<style>` tags in Astro components and directly referencing CSS variables with `var(...)`:
