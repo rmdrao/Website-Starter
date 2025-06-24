@@ -1,0 +1,21 @@
+---
+import HeroSideImage from "@/components/hero/HeroSideImage.astro";
+import HeroCentered from "@/components/hero/HeroCentered.astro";
+import HeroBasic from "@/components/hero/HeroBasic.astro";
+import HeroOverview from "@/components/hero/HeroOverview.astro";
+import HeroBackgroundImage from "@/components/hero/HeroBackgroundImage.astro";
+import { getLocaleFromUrl } from "@/js/localeUtils";
+import { getTranslatedData } from "@/js/translationUtils";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const currLocale = getLocaleFromUrl(Astro.url);
+const siteData = getTranslatedData("siteData", currLocale);
+---
+
+<BaseLayout title={siteData.title} description={siteData.description} navStyle="default">
+	<HeroCentered />
+	<HeroBackgroundImage />
+	<HeroSideImage />
+	<HeroBasic />
+	<!-- <HeroOverview /> -->
+</BaseLayout>

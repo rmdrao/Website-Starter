@@ -24,6 +24,15 @@ const overviewSections = [
 		],
 	},
 	{
+		title: "Sections",
+		links: [
+			{ text: "Feature Sections", href: "/examples/feature-sections" },
+			{ text: "Testimonials & FAQ Sections", href: "/examples/testimonials-faq-sections" },
+			{ text: "Pricing Sections", href: "/examples/pricing-sections" },
+			{ text: "Hero Sections", href: "/examples/hero-sections" },
+		],
+	},
+	{
 		title: "Projects",
 		links: [
 			{ text: "Projects Overview", href: "/projects" },
@@ -39,14 +48,6 @@ const overviewSections = [
 		],
 	},
 	{
-		title: "Career",
-		links: [
-			{ text: "Resume", href: "/resume" },
-			{ text: "Careers Listing", href: "/careers" },
-			{ text: "Job Detail", href: "/careers/ux-designer" },
-		],
-	},
-	{
 		title: "Blog",
 		links: [
 			{ text: "Blog Overview", href: "/blog" },
@@ -58,11 +59,11 @@ const overviewSections = [
 		],
 	},
 	{
-		title: "Sections",
+		title: "Career",
 		links: [
-			{ text: "Pricing Sections", href: "/examples/pricing-sections" },
-			{ text: "Feature Sections", href: "/examples/feature-sections" },
-			{ text: "Testimonials & FAQ Sections", href: "/examples/testimonials-faq-sections" },
+			{ text: "Resume", href: "/resume" },
+			{ text: "Careers Listing", href: "/careers" },
+			{ text: "Job Detail", href: "/careers/ux-designer" },
 		],
 	},
 	{
@@ -86,11 +87,13 @@ const overviewSections = [
 ---
 
 <BaseLayout title={title} description={description} image={image}>
-	<slot name="above-overview" />
+	<slot name="above-overview">
+		<hr class="mt-20 opacity-0" />
+	</slot>
 
-	<section class="site-container py-20 md:py-32">
+	<section class="site-container py-20 pt-10 md:pb-32">
 		<h2 class="h2">Overview</h2>
-		<div class="mt-8 grid grid-cols-1 gap-10 sm:grid-cols-2 md:gap-y-20 lg:grid-cols-4">
+		<div class="mt-8 grid grid-cols-1 gap-14 sm:grid-cols-2 md:gap-y-20 lg:grid-cols-4">
 			{
 				overviewSections.map((section) => (
 					<div>
