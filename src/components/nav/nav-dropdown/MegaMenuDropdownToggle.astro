@@ -55,14 +55,14 @@ if (cols >= 5) {
 		data-state="closed"
 		class:list={[
 			"mega-menu__dropdown-content absolute top-full z-10 transition-all duration-200",
-			"slide-in-from-top-2 fade-in-0 animate-in hidden will-change-transform",
-			"data-[state=closed]:fade-out-0 data-[state=closed]:animate-out data-[state=closed]:duration-200",
+			"slide-in-from-top-2 zoom-in-95 fade-in-0 animate-in hidden will-change-transform",
+			"fade-out-0 data-[state=closed]:animate-out slide-out-to-top-2 zoom-out-95 data-[state=closed]:fill-mode-forwards",
 			insetClass,
 		]}
 	>
 		<ul
 			class:list={[
-				"border-base-200 bg-base-50 dark:border-base-800 dark:bg-base-900 mt-[.9rem] grid w-full max-w-full min-w-[150px] gap-3 rounded-md border border-solid px-1.5 py-3 drop-shadow-sm",
+				"bg-background mt-3 grid w-full max-w-full min-w-[150px] gap-3 rounded-md border border-solid px-1.5 py-3 drop-shadow-sm",
 				gridClass,
 			]}
 		>
@@ -142,7 +142,7 @@ if (cols >= 5) {
 			this.dropdownChevron?.classList.remove("rotate-180");
 			setTimeout(() => {
 				this.dropdownContent?.classList.add("hidden");
-			}, this.animationDuration - 10);
+			}, this.animationDuration - 15);
 		}
 	}
 

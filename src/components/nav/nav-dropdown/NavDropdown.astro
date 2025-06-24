@@ -17,12 +17,11 @@ interface Props {
 const { navItem } = Astro.props as Props;
 ---
 
-<Dropdown openOnHover>
+<Dropdown>
 	<DropdownTrigger asChild>
 		<button
 			type="button"
-			class="primary-focus nav__dropdown-button nav__link--base flex h-10 w-full items-center gap-0.5 px-3 py-2 whitespace-nowrap"
-			id={`${slugify(navItem.text)}-dropdown-menu`}
+			class="primary-focus nav__dropdown-button nav__link--base flex h-10 w-full items-center gap-0.5 rounded-md px-3 py-2 whitespace-nowrap"
 			aria-haspopup="true"
 		>
 			{navItem.text}
@@ -33,7 +32,7 @@ const { navItem } = Astro.props as Props;
 			/>
 		</button>
 	</DropdownTrigger>
-	<DropdownContent align="start" sideOffset={8}>
+	<DropdownContent align="start" sideOffset={12} class="min-w-[11rem] py-3">
 		{navItem.dropdown.map((dropdownItem) => <NavLink navItem={dropdownItem} class="w-full" />)}
 	</DropdownContent>
 </Dropdown>

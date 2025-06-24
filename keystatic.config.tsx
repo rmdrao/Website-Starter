@@ -20,7 +20,7 @@ export default config({
 	// cloud deployment is free to sign up (up to 3 users per team)
 	// docs: https://keystatic.com/docs/cloud
 	// create a Keystatic Cloud account here: https://keystatic.cloud/
-	cloud: { project: "cosmic-themes/atlas" },
+	cloud: { project: "cosmic-themes/starter" },
 	ui: {
 		brand: { name: "Cosmic Themes" },
 	},
@@ -33,7 +33,21 @@ export default config({
 		// this might look like "author-1-en" and "author-1-fr"
 		authors: Collections.Authors(""),
 
+		servicesEN: Collections.Services("en"),
+		servicesFR: Collections.Services("fr"),
+
+		careersEN: Collections.Careers("en"),
+		careersFR: Collections.Careers("fr"),
+
 		otherPagesEN: Collections.OtherPages("en"),
 		otherPagesFR: Collections.OtherPages("fr"),
+
+		projectsEN: Collections.Projects("en"),
+		projectsFR: Collections.Projects("fr"),
+	},
+
+	singletons: {
+		resumeEN: Collections.Resume("en"),
+		resumeFR: Collections.Resume("fr"),
 	},
 });

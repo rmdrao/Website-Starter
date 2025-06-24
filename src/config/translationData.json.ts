@@ -7,19 +7,27 @@
  * * Data file configuration for the i18n system
  * Every {Data} key must exist in the below object
  */
+import faqDataEn from "./en/faqData.json";
 import navDataEn from "./en/navData.json";
 import siteDataEn from "./en/siteData.json";
+import testimonialDataEn from "./en/testimonialData.json";
+import faqDataFr from "./fr/faqData.json";
 import navDataFr from "./fr/navData.json";
 import siteDataFr from "./fr/siteData.json";
+import testimonialDataFr from "./fr/testimonialData.json";
 
 export const dataTranslations = {
 	en: {
 		siteData: siteDataEn,
 		navData: navDataEn,
+		testimonialData: testimonialDataEn,
+		faqData: faqDataEn,
 	},
 	fr: {
 		siteData: siteDataFr,
 		navData: navDataFr,
+		testimonialData: testimonialDataFr,
+		faqData: faqDataFr,
 	},
 } as const;
 
@@ -45,9 +53,28 @@ export const dataTranslations = {
 export const textTranslations = {
 	en: {
 		hero_text: "Everything you need for an amazing website.",
+		hero_description: `Transforming ideas into beautiful, functional designs that leave lasting impressions.`,
+
+		// blog
+		back_to_all_posts: "Back to all posts",
+		updated: "Updated",
+		share_this_article: "Share this article",
+		table_of_contents: "Table of Contents",
+		tags: "Tags",
+		related_posts: "Related Posts",
 	},
 	fr: {
 		hero_text: "Tout ce dont vous avez besoin pour un site Web incroyable.",
+		hero_description:
+			"Je ne parle pas vraiment français donc j'utilise Google Translate pour quelques parties de cette démo.",
+
+		// blog
+		back_to_all_posts: "Retour à tous les articles",
+		updated: "Mis à jour",
+		share_this_article: "Partager cet article",
+		table_of_contents: "Table des matières",
+		tags: "Tags",
+		related_posts: "Articles liés",
 	},
 } as const;
 
@@ -68,12 +95,24 @@ export const routeTranslations = {
 		categoryKey: "categories",
 		categoryKey2: "categories/*",
 		categoryKey3: "categories",
+		tagKey: "tags",
+		tagKey2: "tags/*",
+		tagKey3: "tags",
+		blogKey: "blog",
+		servicesKey: "services",
+		projectsKey: "projects",
 	},
 	fr: {
 		aboutKey: "a-propos",
 		categoryKey: "categories",
 		categoryKey2: "categories",
 		categoryKey3: "categories/*",
+		tagKey: "tags",
+		tagKey2: "tags",
+		tagKey3: "tags/*",
+		blogKey: "blog",
+		servicesKey: "services",
+		projectsKey: "projects",
 	},
 } as const;
 
@@ -91,6 +130,14 @@ export const localizedCollections = {
 	blog: {
 		en: "blog",
 		fr: "blog",
+	},
+	services: {
+		en: "services",
+		fr: "services",
+	},
+	projects: {
+		en: "projects",
+		fr: "projects",
 	},
 	// Add more collections/locales as needed
 } as const;

@@ -57,6 +57,9 @@
 	/* starwind and cosmic themes animations */
 	--animate-accordion-down: accordion-down 0.2s ease-out;
 	--animate-accordion-up: accordion-up 0.2s ease-out;
+	--animate-marquee: marquee 70s linear infinite;
+	--animate-marquee-testimonials: marquee-testimonials 60s linear infinite;
+	--animate-marquee-gallery: marquee-gallery 100s linear infinite;
 
 	@keyframes accordion-down {
 		from {
@@ -75,6 +78,33 @@
 			height: 0;
 		}
 	}
+
+	@keyframes marquee {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(calc(-100% - 8rem));
+		}
+	}
+
+	@keyframes marquee-testimonials {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(calc(-100% - 1.5rem));
+		}
+	}
+
+	@keyframes marquee-gallery {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(calc(-100% - 2.5rem));
+		}
+	}
 }
 
 /* "inline" option is necessary here https://github.com/tailwindlabs/tailwindcss/discussions/15122#discussioncomment-11356322 */
@@ -87,7 +117,6 @@
 	--color-popover: var(--popover);
 	--color-popover-foreground: var(--popover-foreground);
 	--color-primary: var(--primary);
-	--color-primary-dark: var(--primary-dark);
 	--color-primary-foreground: var(--primary-foreground);
 	--color-secondary: var(--secondary);
 	--color-secondary-foreground: var(--secondary-foreground);

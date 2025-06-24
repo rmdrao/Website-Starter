@@ -28,8 +28,8 @@ export default defineConfig({
 	},
 	markdown: {
 		shikiConfig: {
-			// Shiki Themes: https://github.com/shikijs/shiki/blob/main/docs/themes.md
-			theme: "dracula",
+			// Shiki Themes: https://shiki.style/themes
+			theme: "css-variables",
 			wrap: true,
 		},
 	},

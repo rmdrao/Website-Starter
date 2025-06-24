@@ -42,6 +42,22 @@ export interface navMegaDropdownItem {
 export type navItem = navLinkItem | navDropdownItem | navMegaDropdownItem;
 
 // --------------------------------------------------------
+// faq data types
+export interface FaqItem {
+	question: string; // this is the question of the accordion
+	answer: string; // these are the details seen after expanding the accordion
+}
+
+// --------------------------------------------------------
+// testimonial data types
+export interface TestimonialItem {
+	avatar: ImageMetadata; // an imported image
+	name: string;
+	title: string;
+	testimonial: string;
+}
+
+// --------------------------------------------------------
 // site settings types
 export interface SiteSettingsProps {
 	useViewTransitions?: boolean;

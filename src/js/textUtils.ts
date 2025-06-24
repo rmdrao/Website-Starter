@@ -48,6 +48,18 @@ export function categorify(text: string): string {
 
 // --------------------------------------------------------
 /**
+ * * returns "tagified" text. runs slugify() and then replaces - with space and lower cases everything
+ * @param text: string - text to tagify
+ */
+export function tagify(text: string): string {
+	const slugifiedText = slugify(text);
+	return slugifiedText
+		.replace(/-/g, " ") // replace "-" with space
+		.toLowerCase();
+}
+
+// --------------------------------------------------------
+/**
  * * returns a nicely formatted string of the date passed
  * @param date: string | number | Date - date to format
  * @param locale: string - locale to format the date in

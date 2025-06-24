@@ -18,7 +18,6 @@ const authors: CollectionEntry<"authors">[] = await getCollection("authors");
 export async function GET(context) {
 	const posts = await getAllPosts(rssLocale);
 
-	// TODO: (maybe?) handle multiple authors instead of just putting the first author's data
 	return rss({
 		// ex. you can use a stylesheet from "public/rss/styles.xsl"
 		// stylesheet: "/rss/styles.xsl",
@@ -47,13 +46,15 @@ export async function GET(context) {
 
 			// custom data example, define in XML tags
 			// this adds the blog post image
-			customData: `<media:content
+			customData: post.data.heroImage
+				? `<media:content
           type="image/${post.data.heroImage.format == "jpg" ? "jpeg" : "png"}"
           width="${post.data.heroImage.width}"
           height="${post.data.heroImage.height}"
           medium="image"
           url="${getImageUrl(post)}" />
-      `,
+      `
+				: "",
 
 			// Compute RSS link from post `slug`
 			link: getLocalizedRoute(rssLocale, `/blog/${post.id}/`),
@@ -92,6 +93,11 @@ const getAuthorEmail = (authorSlug: string) => {
 const getImageUrl = (post: CollectionEntry<"blog">) => {
 	let imageUrl = "";
 	let imageUrlEnd = "";
+
+	// Check if heroImage exists
+	if (!post.data.heroImage) {
+		return "";
+	}
 
 	// assumes post.data.heroImage is defined
 	imageUrlEnd = post.data.heroImage.src.toString();
