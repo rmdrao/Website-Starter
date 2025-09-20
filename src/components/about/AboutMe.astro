@@ -34,7 +34,7 @@ const aboutItems: AboutItem[] = [
 		<div class="mx-auto max-w-6xl">
 			<div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
 				<div class="order-2 lg:order-1">
-					<div data-aos="fade-right" data-aos-trigger="#about-alt">
+					<div data-mos="fade-right" data-mos-anchor="#about-alt">
 						<h2 class="text-foreground h2 mb-4">About Me</h2>
 						<p class="description mb-12">
 							With over a decade of experience in digital design, I specialize in creating
@@ -46,9 +46,9 @@ const aboutItems: AboutItem[] = [
 							aboutItems.map((item, idx) => (
 								<div
 									class="group hover:bg-muted rounded-lg border p-6 shadow-md transition-colors"
-									data-aos="fade-in"
-									data-aos-trigger="#about-alt"
-									data-aos-delay={0.8 + idx * 0.2}
+									data-mos="fade-in"
+									data-mos-anchor="#about-alt"
+									data-mos-delay={0.8 + idx * 0.2}
 								>
 									<Icon name={item.icon} class="text-accent h-8 w-8" />
 									<h3 class="text-foreground group-hover:text-accent mt-2 mb-2 text-lg font-semibold transition-colors duration-300">
@@ -61,7 +61,7 @@ const aboutItems: AboutItem[] = [
 					</div>
 				</div>
 				<div class="order-1 lg:order-2">
-					<div class="relative" data-aos="fade-left" data-aos-trigger="#about-alt">
+					<div class="relative" data-mos="fade-left" data-mos-anchor="#about-alt">
 						<div class="relative">
 							<Image
 								src={authorImage}

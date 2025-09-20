@@ -64,15 +64,23 @@ const currLocale = getLocaleFromUrl(Astro.url);
 
 		<!-- Scroll animations -->
 		<script>
-			import siteSettings from "@/config/siteSettings.json";
-			import AOS from "@/js/aos/aos";
+			import { MOS } from "motion-on-scroll";
+
+			import { siteSettings } from "@/config/siteSettings.json";
 
 			if (siteSettings.useAnimations === true) {
-				// runs on initial page load
-				AOS.init({ once: true });
+				MOS.init({
+					offset: 100,
+					duration: 0.8,
+					timeUnits: "s",
+					distance: 20,
+					delay: 0,
+					easing: "ease-out-cubic",
+					once: true,
+					mirror: false,
+				});
 
-				// runs on view transitions navigation
-				document.addEventListener("astro:after-swap", AOS.refreshHard);
+				document.addEventListener("astro:after-swap", MOS.refreshHard);
 			}
 		</script>
 	</body>

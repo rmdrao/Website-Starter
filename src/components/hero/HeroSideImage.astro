@@ -22,7 +22,7 @@ const t = useTranslations(currLocale);
 			class="mx-auto grid max-w-md gap-10 text-center md:max-w-none md:grid-cols-2 md:text-left xl:items-center"
 		>
 			<div class="mx-auto my-auto w-full pt-4 md:ml-0 md:max-w-[560px] md:py-10 lg:pr-10">
-				<div class="" data-aos="fade-up" data-aos-trigger="#hero-side">
+				<div class="" data-mos="fade-up" data-mos-anchor="#hero-side">
 					<h1
 						class="mb-6 text-5xl leading-tight font-medium tracking-tight text-pretty md:text-6xl md:leading-tight"
 					>
@@ -31,17 +31,17 @@ const t = useTranslations(currLocale);
 				</div>
 				<p
 					class="description mb-8 text-pretty lg:text-lg"
-					data-aos="fade-up"
-					data-aos-delay=".1"
-					data-aos-trigger="#hero-side"
+					data-mos="fade-up"
+					data-mos-delay=".1"
+					data-mos-anchor="#hero-side"
 				>
 					{t("hero_description")}
 				</p>
 				<div
 					class="mt-6 flex flex-wrap justify-center gap-4 md:justify-start"
-					data-aos="fade-up"
-					data-aos-delay=".2"
-					data-aos-trigger="#hero-side"
+					data-mos="fade-up"
+					data-mos-delay=".2"
+					data-mos-anchor="#hero-side"
 				>
 					<Button variant="primary" href={getLocalizedRoute(currLocale, "/sign-up")}>
 						Create Your Account
@@ -60,9 +60,9 @@ const t = useTranslations(currLocale);
 
 			<div
 				class="flex h-full w-full flex-grow items-center"
-				data-aos="fade-in"
-				data-aos-trigger="#hero-side"
-				data-aos-delay=".5"
+				data-mos="fade-in"
+				data-mos-anchor="#hero-side"
+				data-mos-delay=".5"
 			>
 				<div class="relative h-full overflow-hidden rounded-xl border">
 					<Image

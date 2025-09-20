@@ -44,8 +44,8 @@ const orderedServices = filteredServices.sort((a, b) => {
 	<div class="site-container" id="services-cards-trigger">
 		<h2
 			class="h2 mx-auto max-w-3xl text-center"
-			data-aos="fade-left"
-			data-aos-trigger="#services-cards-trigger"
+			data-mos="fade-left"
+			data-mos-anchor="#services-cards-trigger"
 		>
 			A Wide Range Of Services For Your Health
 		</h2>
@@ -54,9 +54,9 @@ const orderedServices = filteredServices.sort((a, b) => {
 				orderedServices.map((service, idx) => (
 					<ServiceCard
 						service={service}
-						data-aos="fade-left"
-						data-aos-delay={idx * 0.15}
-						data-aos-trigger="#services-cards-trigger"
+						data-mos="fade-left"
+						data-mos-delay={idx * 0.15}
+						data-mos-anchor="#services-cards-trigger"
 					/>
 				))
 			}

@@ -27,7 +27,7 @@ const { title, description, image, technologies, ...rest } = project.data;
 			"order-1", // Always first on mobile
 			imageSide === "right" ? "lg:order-2" : "lg:order-1", // Alternate order on desktop
 		]}
-		data-aos={animations ? (imageSide === "right" ? "fade-left" : "fade-right") : undefined}
+		data-mos={animations ? (imageSide === "right" ? "fade-left" : "fade-right") : undefined}
 	>
 		<div class="relative">
 			<div class="relative overflow-hidden rounded-xl border">
@@ -49,7 +49,7 @@ const { title, description, image, technologies, ...rest } = project.data;
 			"order-2", // Always second on mobile
 			imageSide === "right" ? "lg:order-1" : "lg:order-2", // Alternate order on desktop
 		]}
-		data-aos={animations ? (imageSide === "right" ? "fade-right" : "fade-left") : undefined}
+		data-mos={animations ? (imageSide === "right" ? "fade-right" : "fade-left") : undefined}
 	>
 		<div class="space-y-6">
 			<h3 class="h3">{title}</h3>

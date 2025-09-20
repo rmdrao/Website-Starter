@@ -48,9 +48,9 @@ const featureData: FeatureData[] = [
 						featureData.map((feature, idx) => (
 							<div
 								class="w-full"
-								data-aos="fade-right"
-								data-aos-trigger="#feature-steps-trigger"
-								data-aos-delay={0.25 * idx}
+								data-mos="fade-right"
+								data-mos-anchor="#feature-steps-trigger"
+								data-mos-delay={0.25 * idx}
 							>
 								<div class="flex flex-wrap gap-8">
 									<div class="w-auto">
@@ -71,9 +71,9 @@ const featureData: FeatureData[] = [
 				</div>
 				<div
 					class="mx-auto flex justify-start"
-					data-aos="fade-right"
-					data-aos-trigger="#feature-steps-trigger"
-					data-aos-delay={0.75}
+					data-mos="fade-right"
+					data-mos-anchor="#feature-steps-trigger"
+					data-mos-delay={0.75}
 				>
 					<Button variant="primary" arrow="right" href={getLocalizedRoute(currLocale, "signup")}>
 						Get Started

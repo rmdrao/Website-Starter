@@ -24,15 +24,15 @@ const sortedProjects = filteredProjects.sort(
 
 <section id="showcase-cards" class="bg-background text-foreground py-16 md:py-24">
 	<div class="site-container mx-auto px-4">
-		<h2 class="h2 mb-16 text-center" data-aos="fade-up">Featured Work</h2>
+		<h2 class="h2 mb-16 text-center" data-mos="fade-up">Featured Work</h2>
 		<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3" id="project-cards">
 			{
 				sortedProjects.map((project, idx) => (
 					<ProjectCard
 						project={project}
-						data-aos="fade-up"
-						data-aos-trigger="#project-cards"
-						data-aos-delay={0.2 * idx}
+						data-mos="fade-up"
+						data-mos-anchor="#project-cards"
+						data-mos-delay={0.2 * idx}
 					/>
 				))
 			}

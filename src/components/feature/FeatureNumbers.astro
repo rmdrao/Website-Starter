@@ -45,22 +45,17 @@ const featureData: FeatureCardData[] = [
 <section id="feature-numbers" class="py-16 md:py-20">
 	<div class="site-container">
 		<div class="mr-auto max-w-2xl">
-			<div class="flex" data-aos="fade-up" data-aos-trigger="#feature-numbers">
+			<div class="flex" data-mos="fade-up" data-mos-anchor="#feature-numbers">
 				<Badge>Trusted by thousands</Badge>
 			</div>
-			<h2
-				class="h2 mt-4"
-				data-aos="fade-up"
-				data-aos-delay=".1"
-				data-aos-trigger="#feature-numbers"
-			>
+			<h2 class="h2 mt-4" data-mos="fade-up" data-mos-delay=".1" data-mos-anchor="#feature-numbers">
 				Used by developers all over the world
 			</h2>
 			<!-- <p
         class="description"
-        data-aos="fade-up"
-        data-aos-delay=".2"
-        data-aos-trigger="#feature-numbers"
+        data-mos="fade-up"
+        data-mos-delay=".2"
+        data-mos-anchor="#feature-numbers"
       >
         Our platform is trusted by thousands of developers worldwide. Join them
         and experience the power of our tools and services today.
@@ -77,9 +72,9 @@ const featureData: FeatureCardData[] = [
 						title={feature.title}
 						text={feature.text}
 						icon={feature.icon}
-						data-aos="fade-up"
-						data-aos-delay={`${idx * 0.25 + 0}`}
-						data-aos-trigger="#feature-numbers-cards"
+						data-mos="fade-up"
+						data-mos-delay={`${idx * 0.25 + 0}`}
+						data-mos-anchor="#feature-numbers-cards"
 					/>
 				))
 			}
