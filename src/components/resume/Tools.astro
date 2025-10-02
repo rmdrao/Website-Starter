@@ -90,7 +90,7 @@ const categories = ["All", ...new Set(toolsToDisplay.map((tool) => tool.category
     animate(
       ".tool-item",
       { opacity: [0, 1], y: [20, 0] },
-      { duration: 0.5, delay: stagger(0.05), ease: easeOutExpo },
+      { duration: 0.5, delay: stagger(0.05), ease: easeOutQuad },
     );
 
     // Add click event listeners to filter buttons
