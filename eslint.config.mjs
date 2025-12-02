@@ -61,6 +61,7 @@ export default defineConfig([
       "@typescript-eslint/no-unused-vars": "off", // I sometimes purposely have unused vars as this is a template
       "astro/jsx-a11y/anchor-is-valid": "off", // Disable anchor-is-valid rule for Astro files as this is a template
       "@typescript-eslint/no-unused-expressions": "off",
+      "astro/jsx-a11y/no-noninteractive-tabindex": "off",
     },
   },
 
