@@ -25,29 +25,20 @@ export default config({
     brand: { name: "Cosmic Themes" },
   },
   collections: {
-    blogEN: Collections.Blog("en"),
-    blogFR: Collections.Blog("fr"),
+    blog: Collections.Blog("en"),
 
-    // for now there is a limitation with keystatic where relationship fields don't work well with i18n features
-    // If you need multiple languages here (you might not) just create multiple variants of the same author
-    // this might look like "author-1-en" and "author-1-fr"
     authors: Collections.Authors(""),
 
-    servicesEN: Collections.Services("en"),
-    servicesFR: Collections.Services("fr"),
+    services: Collections.Services("en"),
 
-    careersEN: Collections.Careers("en"),
-    careersFR: Collections.Careers("fr"),
+    careers: Collections.Careers("en"),
 
-    otherPagesEN: Collections.OtherPages("en"),
-    otherPagesFR: Collections.OtherPages("fr"),
+    otherPages: Collections.OtherPages("en"),
 
-    projectsEN: Collections.Projects("en"),
-    projectsFR: Collections.Projects("fr"),
+    projects: Collections.Projects("en"),
   },
 
   singletons: {
-    resumeEN: Collections.Resume("en"),
-    resumeFR: Collections.Resume("fr"),
+    resume: Collections.Resume("en"),
   },
 });
